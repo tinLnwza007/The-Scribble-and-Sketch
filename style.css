@@ -1,0 +1,1091 @@
+/* ============================================
+   ARTISANAL ARCHIVE — Design System Tokens
+   ============================================ */
+
+:root {
+  /* — Surface Colors (Light Mode) — */
+  --surface: #fbf9f5;
+  --surface-dim: #dbdad6;
+  --surface-bright: #fbf9f5;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f5f3ef;
+  --surface-container: #efeeea;
+  --surface-container-high: #eae8e4;
+  --surface-container-highest: #e4e2de;
+
+  /* — On Surface — */
+  --on-surface: #1b1c1a;
+  --on-surface-variant: #45464e;
+  --inverse-surface: #30312e;
+  --inverse-on-surface: #f2f0ed;
+
+  /* — Outline — */
+  --outline: #75777e;
+  --outline-variant: #c6c6ce;
+
+  /* — Primary (Ink Indigo) — */
+  --primary: #182442;
+  --on-primary: #ffffff;
+  --primary-container: #2e3a59;
+  --on-primary-container: #98a4c9;
+  --inverse-primary: #bac6ec;
+  --surface-tint: #525e7f;
+
+  /* — Secondary (Pencil Sunset) — */
+  --secondary: #a73920;
+  --on-secondary: #ffffff;
+  --secondary-container: #fe795a;
+  --on-secondary-container: #6f1300;
+  --secondary-fixed: #ffdad2;
+  --secondary-fixed-dim: #ffb4a3;
+
+  /* — Tertiary (Craft Leaf) — */
+  --tertiary: #0a2c14;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #224228;
+  --on-tertiary-container: #8aae8c;
+  --tertiary-fixed: #c6ecc7;
+  --tertiary-fixed-dim: #abd0ac;
+
+  /* — Error — */
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+
+  /* — Typography — */
+  --font-headline: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* — Spacing (8px rhythm) — */
+  --unit: 8px;
+  --gutter: 24px;
+  --container-max: 960px; /* Expanded for board view */
+  --margin-mobile: 16px;
+  --margin-desktop: 40px;
+
+  /* — Radius — */
+  --radius-sm: 0.25rem;
+  --radius: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+  
+  --dot-color: rgba(24, 36, 66, 0.07);
+}
+
+/* ════════════════════════════════════════════
+   DARK MODE OVERRIDES
+   ════════════════════════════════════════════ */
+html.dark, body.dark {
+  /* — Surface Colors (Dark Mode) — */
+  --surface: #191a17;
+  --surface-dim: #111210;
+  --surface-bright: #242521;
+  --surface-container-lowest: #0c0d0b;
+  --surface-container-low: #1f201c;
+  --surface-container: #252622;
+  --surface-container-high: #2d2e29;
+  --surface-container-highest: #343630;
+
+  /* — On Surface — */
+  --on-surface: #eae8e4;
+  --on-surface-variant: #b8b9b0;
+  --inverse-surface: #fbf9f5;
+  --inverse-on-surface: #1b1c1a;
+
+  /* — Outline — */
+  --outline: #8c8e85;
+  --outline-variant: #43453e;
+
+  /* — Primary — */
+  --primary: #bac6ec;
+  --on-primary: #121b30;
+  --primary-container: #2e3a59;
+  --on-primary-container: #dae2ff;
+  --inverse-primary: #182442;
+  --surface-tint: #bac6ec;
+
+  /* — Secondary — */
+  --secondary: #fe795a;
+  --on-secondary: #570a00;
+  --secondary-container: #a73920;
+  --on-secondary-container: #ffdad2;
+
+  /* — Tertiary — */
+  --tertiary: #abd0ac;
+  --on-tertiary: #002209;
+  --tertiary-container: #224228;
+  --on-tertiary-container: #c6ecc7;
+
+  /* — Error — */
+  --error: #ffb4ab;
+  --on-error: #690005;
+  --error-container: #93000a;
+  --on-error-container: #ffdad6;
+
+  --dot-color: rgba(234, 232, 228, 0.05);
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--on-surface);
+  background-color: var(--surface);
+  background-image: radial-gradient(var(--dot-color) 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+  min-height: 100dvh;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Paper texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  z-index: 0;
+}
+
+/* Smooth transitions for theme switching */
+body, header, section, input, button, li, div, span, label {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+.text-headline-xl {
+  font-family: var(--font-headline);
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-headline-lg {
+  font-family: var(--font-headline);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.text-headline-md {
+  font-family: var(--font-headline);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.text-body-lg {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-body-md {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-label-md {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+.text-caption {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+
+.app-container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--margin-mobile);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(198, 198, 206, 0.3);
+}
+
+.app-header__brand {
+  font-family: var(--font-headline);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.01em;
+}
+
+.app-header__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.app-header__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  border-radius: var(--radius);
+}
+
+.app-header__icon:hover {
+  background: var(--surface-container);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+  padding: 32px 0 24px;
+  text-align: center;
+}
+
+.hero__badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--secondary-fixed);
+  color: #86220a;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+}
+
+html.dark .hero__badge {
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+.hero__title {
+  font-family: var(--font-headline);
+  font-size: clamp(32px, 6vw, 44px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.hero__subtitle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Pencil underline decoration */
+.pencil-underline {
+  background: linear-gradient(to right, var(--secondary-container) 0%, var(--secondary-container) 100%);
+  background-size: 100% 3px;
+  background-position: 0 92%;
+  background-repeat: no-repeat;
+  padding-bottom: 2px;
+}
+
+/* ============================================
+   ADD TODO FORM
+   ============================================ */
+
+.add-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  align-items: stretch;
+}
+
+.add-form__input {
+  flex: 1;
+  padding: 14px 4px;
+  font-size: 16px;
+  color: var(--on-surface);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--outline-variant);
+  border-radius: 0;
+}
+
+.add-form__input::placeholder {
+  color: var(--outline);
+  font-style: italic;
+}
+
+.add-form__input:focus {
+  border-bottom-color: var(--secondary-container);
+  background: var(--surface-container-lowest);
+  border: 2px solid var(--secondary-container);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.add-form__btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border: 1.5px solid var(--primary);
+  border-radius: 2px;
+  box-shadow: 2px 2px 0px 0px var(--secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.add-form__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0px 0px var(--secondary);
+}
+
+.add-form__btn:active {
+  transform: translateY(1px);
+  box-shadow: 1px 1px 0px 0px var(--secondary);
+}
+
+/* ============================================
+   FILTER & VIEW SWITCHBAR
+   ============================================ */
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 8px 16px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius);
+  letter-spacing: 0.02em;
+}
+
+.filter-tab:hover {
+  background: var(--surface-container);
+  color: var(--primary);
+}
+
+.filter-tab--active {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
+  box-shadow: 2px 2px 0px 0px var(--secondary);
+}
+
+.filter-tab--active:hover {
+  background: var(--primary-container);
+  color: var(--on-primary);
+}
+
+.filter-tab__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  margin-left: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.filter-tab:not(.filter-tab--active) .filter-tab__count {
+  background: var(--surface-container-high);
+  color: var(--on-surface-variant);
+}
+
+/* View Switcher */
+.view-switcher {
+  display: flex;
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius);
+  padding: 2px;
+}
+
+.view-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  border-radius: calc(var(--radius) - 2px);
+}
+
+.view-btn:hover {
+  color: var(--primary);
+}
+
+.view-btn--active {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.view-btn .material-symbols-outlined {
+  font-size: 16px;
+}
+
+/* ============================================
+   STATS BAR
+   ============================================ */
+
+.stats-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  margin-bottom: 16px;
+  border-bottom: 1px dashed var(--outline-variant);
+}
+
+.stats-bar__info {
+  font-size: 13px;
+  color: var(--outline);
+}
+
+.stats-bar__info strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.stats-bar__clear-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--secondary);
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  letter-spacing: 0.02em;
+}
+
+.stats-bar__clear-btn:hover {
+  background: var(--error-container);
+  color: var(--error);
+}
+
+/* ============================================
+   TODO LIST VIEW (Vertical)
+   ============================================ */
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  padding-bottom: 40px;
+}
+
+/* ============================================
+   TODO ITEM CARD
+   ============================================ */
+
+.todo-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--surface-container-low);
+  border: 1px solid rgba(198, 198, 206, 0.15);
+  border-radius: var(--radius);
+  animation: slideIn 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.todo-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px -8px rgba(167, 57, 32, 0.08);
+}
+
+/* Washi tape accent */
+.todo-item::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  width: 36px;
+  height: 10px;
+  border-radius: 1px;
+  transform: rotate(2deg);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.todo-item:nth-child(4n+1)::before { background: var(--secondary-container); }
+.todo-item:nth-child(4n+2)::before { background: var(--tertiary-fixed-dim); }
+.todo-item:nth-child(4n+3)::before { background: var(--inverse-primary); }
+.todo-item:nth-child(4n+4)::before { background: var(--secondary-fixed-dim); }
+
+/* Status-based styles for list view */
+.todo-item--doing {
+  border-left: 4px solid var(--secondary);
+}
+
+.todo-item--done {
+  opacity: 0.6;
+}
+
+.todo-item--done .todo-item__text {
+  text-decoration: line-through;
+  text-decoration-color: var(--secondary);
+  text-decoration-thickness: 2px;
+  color: var(--outline);
+}
+
+/* Dragging state */
+.todo-item--dragging {
+  opacity: 0.3;
+  border: 2px dashed var(--outline);
+  box-shadow: none;
+  transform: scale(0.96);
+}
+
+/* Deleting animation */
+.todo-item--removing {
+  animation: slideOut 0.3s cubic-bezier(0.55, 0.06, 0.68, 0.19) forwards;
+}
+
+/* ============================================
+   CUSTOM CHECKBOX (Hand-drawn X)
+   ============================================ */
+
+.todo-checkbox {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.todo-checkbox input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.todo-checkbox__box {
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--outline-variant);
+  border-radius: 4px;
+  background: var(--surface-container-lowest);
+}
+
+.todo-checkbox input:hover + .todo-checkbox__box {
+  border-color: var(--primary);
+  background: var(--surface-container);
+}
+
+/* Hand-drawn X mark via SVG */
+.todo-checkbox__mark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.5) rotate(-10deg);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.todo-checkbox__mark svg {
+  width: 18px;
+  height: 18px;
+}
+
+.todo-checkbox__mark svg path {
+  stroke: var(--secondary);
+  stroke-width: 3;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  transition: stroke-dashoffset 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.todo-checkbox input:checked + .todo-checkbox__box {
+  border-color: var(--secondary);
+  background: var(--secondary-fixed);
+}
+
+html.dark .todo-checkbox input:checked + .todo-checkbox__box {
+  background: var(--secondary-container);
+}
+
+.todo-checkbox input:checked ~ .todo-checkbox__mark {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.todo-checkbox input:checked ~ .todo-checkbox__mark svg path {
+  stroke-dashoffset: 0;
+}
+
+/* ============================================
+   TODO ITEM CONTENT & ACTIONS
+   ============================================ */
+
+.todo-item__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.todo-item__text {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--on-surface);
+  word-break: break-word;
+}
+
+.todo-item__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.todo-item__date {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--outline);
+  letter-spacing: 0.02em;
+}
+
+.todo-item__status-tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.todo-item__status-tag--todo {
+  background: var(--surface-container-highest);
+  color: var(--on-surface-variant);
+}
+
+.todo-item__status-tag--doing {
+  background: var(--secondary-fixed);
+  color: var(--on-secondary-container);
+}
+
+html.dark .todo-item__status-tag--doing {
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+.todo-item__status-tag--done {
+  background: var(--tertiary-fixed);
+  color: var(--on-tertiary-container);
+}
+
+html.dark .todo-item__status-tag--done {
+  background: var(--tertiary-container);
+  color: var(--on-tertiary-container);
+}
+
+/* Inline edit input */
+.todo-item__edit-input {
+  width: 100%;
+  padding: 6px 4px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--on-surface);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--secondary-container);
+  outline: none;
+}
+
+/* Item Actions */
+.todo-item__actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.todo-item:hover .todo-item__actions {
+  opacity: 1;
+}
+
+.todo-action-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  color: var(--outline);
+}
+
+.todo-action-btn:hover {
+  background: var(--surface-container);
+  color: var(--primary);
+}
+
+.todo-action-btn--delete:hover {
+  background: var(--error-container);
+  color: var(--error);
+}
+
+.todo-action-btn .material-symbols-outlined {
+  font-size: 18px;
+}
+
+/* Helper selector for Mobile Status Move */
+.todo-item__move-selector {
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid var(--outline-variant);
+  background: var(--surface-container-low);
+  color: var(--on-surface);
+  border-radius: 4px;
+  padding: 2px 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* ============================================
+   TRELLO BOARD VIEW (Kanban)
+   ============================================ */
+
+.trello-board {
+  display: none; /* Controlled by js */
+  gap: 20px;
+  padding-bottom: 40px;
+  overflow-x: auto;
+  align-items: flex-start;
+  scroll-snap-type: x mandatory;
+}
+
+.board-column {
+  flex: 1;
+  min-width: 280px;
+  background: var(--surface-container-low);
+  border: 1px solid rgba(198, 198, 206, 0.25);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  scroll-snap-align: start;
+}
+
+.board-column__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--outline-variant);
+  position: relative;
+}
+
+/* Column Header washi style line */
+.board-column__header::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+}
+
+.board-column--todo .board-column__header::after { background: var(--outline); }
+.board-column--doing .board-column__header::after { background: var(--secondary); }
+.board-column--done .board-column__header::after { background: var(--tertiary); }
+
+.board-column__title {
+  font-family: var(--font-headline);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.board-column__count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--outline);
+  background: var(--surface-container-high);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.board-column__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 350px;
+  padding: 4px 0;
+  transition: background-color 0.2s ease;
+}
+
+.board-column__list--dragover {
+  background-color: var(--surface-container);
+  border-radius: var(--radius);
+  outline: 2px dashed var(--secondary-container);
+}
+
+/* Force specific column changes in Board View */
+.trello-board .todo-item {
+  cursor: grab;
+}
+
+.trello-board .todo-item:active {
+  cursor: grabbing;
+}
+
+/* Hide checkbox in Board View because drag represents status */
+.trello-board .todo-checkbox {
+  display: none;
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.empty-state__icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-container);
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 2px dashed var(--outline-variant);
+}
+
+.empty-state__icon .material-symbols-outlined {
+  font-size: 36px;
+  color: var(--outline);
+}
+
+.empty-state__title {
+  font-family: var(--font-headline);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.empty-state__text {
+  font-size: 14px;
+  color: var(--outline);
+  max-width: 280px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.app-footer {
+  text-align: center;
+  padding: 32px 0;
+  border-top: 1px solid rgba(198, 198, 206, 0.3);
+  margin-top: auto;
+}
+
+.app-footer__brand {
+  font-family: var(--font-headline);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.app-footer__text {
+  font-size: 12px;
+  color: var(--outline);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(40px) scale(0.95);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (min-width: 768px) {
+  .app-container {
+    padding: 0 var(--margin-desktop);
+  }
+}
+
+@media (max-width: 768px) {
+  .trello-board {
+    margin-left: calc(-1 * var(--margin-mobile));
+    margin-right: calc(-1 * var(--margin-mobile));
+    padding-left: var(--margin-mobile);
+    padding-right: var(--margin-mobile);
+  }
+}
+
+@media (max-width: 480px) {
+  .add-form {
+    flex-direction: column;
+  }
+
+  .add-form__btn {
+    justify-content: center;
+  }
+
+  .todo-item__actions {
+    opacity: 1;
+  }
+
+  .hero {
+    padding: 24px 0 16px;
+  }
+}

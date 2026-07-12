@@ -1,0 +1,461 @@
+<!DOCTYPE html><html class="light" lang="en" style="scroll-behavior: smooth;"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Your Archive | The Scribble &amp; Sketch</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Bricolage+Grotesque:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#abd0ac",
+                    "primary": "#182442",
+                    "background": "#fbf9f5",
+                    "secondary-fixed": "#ffdad2",
+                    "outline": "#75777e",
+                    "on-tertiary-container": "#8aae8c",
+                    "primary-container": "#2e3a59",
+                    "on-secondary-container": "#6f1300",
+                    "surface-container-highest": "#e4e2de",
+                    "surface-container": "#efeeea",
+                    "tertiary": "#0a2c14",
+                    "surface-variant": "#e4e2de",
+                    "on-tertiary-fixed": "#01210a",
+                    "on-tertiary-fixed-variant": "#2d4e33",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#f2f0ed",
+                    "inverse-surface": "#30312e",
+                    "on-primary-container": "#98a4c9",
+                    "surface-container-high": "#eae8e4",
+                    "primary-fixed-dim": "#bac6ec",
+                    "on-surface": "#1b1c1a",
+                    "tertiary-fixed": "#c6ecc7",
+                    "inverse-primary": "#bac6ec",
+                    "surface": "#fbf9f5",
+                    "on-background": "#1b1c1a",
+                    "surface-dim": "#dbdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#fe795a",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#dae2ff",
+                    "secondary": "#a73920",
+                    "on-secondary-fixed-variant": "#86220a",
+                    "surface-container-low": "#f5f3ef",
+                    "on-surface-variant": "#45464e",
+                    "on-primary-fixed-variant": "#3a4666",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#224228",
+                    "on-primary-fixed": "#0d1a38",
+                    "surface-bright": "#fbf9f5",
+                    "outline-variant": "#c6c6ce",
+                    "secondary-fixed-dim": "#ffb4a3",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#525e7f",
+                    "on-secondary-fixed": "#3d0600"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Bricolage Grotesque"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "caption": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .paper-texture {
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        .hand-drawn-line {
+            height: 2px;
+            background: currentColor;
+            mask-image: url('data:image/svg+xml;utf8,<svg preserveAspectRatio="none" viewBox="0 0 100 2" xmlns="http://www.w3.org/2000/svg"><path d="M0 1C20 0.5 40 1.5 60 1C80 0.5 100 1.5 100 1" stroke="black" stroke-width="2" fill="none"/></svg>');
+            -webkit-mask-image: url('data:image/svg+xml;utf8,<svg preserveAspectRatio="none" viewBox="0 0 100 2" xmlns="http://www.w3.org/2000/svg"><path d="M0 1C20 0.5 40 1.5 60 1C80 0.5 100 1.5 100 1" stroke="black" stroke-width="2" fill="none"/></svg>');
+        }
+
+        .washi-accent {
+            width: 40px;
+            height: 12px;
+            opacity: 0.8;
+            transform: rotate(-2deg);
+        }
+
+        .custom-checkbox:checked + .checkbox-visual::after {
+            content: 'close';
+            font-family: 'Material Symbols Outlined';
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-row:hover .lift-effect {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px -10px rgba(167, 57, 32, 0.15);
+        }
+
+        /* Reveal Animation Styles */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<div class="fixed inset-0 paper-texture z-0"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant/30">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">menu</button>
+<a class="hover:opacity-80 transition-opacity" href="{{DATA:SCREEN:SCREEN_6}}">
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">The Scribble &amp; Sketch</h1>
+</a>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:opacity-80 transition-opacity font-label-md" href="#">Journal</a>
+<a class="text-on-surface-variant hover:opacity-80 transition-opacity font-label-md" href="#">Collections</a>
+</nav>
+<div class="relative">
+<button class="material-symbols-outlined text-primary font-bold hover:opacity-80 transition-opacity">shopping_bag</button>
+<span class="absolute -top-2 -right-2 bg-secondary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">3</span>
+</div>
+</div>
+</div>
+</header>
+<main class="relative z-10 pt-24 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto min-h-screen">
+<!-- Page Header -->
+<div class="mb-12 reveal">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-2">Shopping Archive</h2>
+<div class="hand-drawn-line text-outline-variant/40 w-full max-w-xs"></div>
+<p class="text-on-surface-variant mt-4 font-body-lg">Review your selected tools for creativity.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Items Section -->
+<div class="lg:col-span-8">
+<!-- Bulk Selection Header -->
+<div class="flex items-center justify-between py-4 mb-6 px-4 bg-surface-container-low rounded-lg border border-outline-variant/10 reveal reveal-delay-1">
+<label class="flex items-center gap-4 cursor-pointer group">
+<div class="relative w-6 h-6">
+<input checked="" class="custom-checkbox absolute inset-0 opacity-0 z-10 cursor-pointer peer" type="checkbox">
+<div class="checkbox-visual w-6 h-6 border-2 border-primary rounded flex items-center justify-center text-primary peer-hover:bg-primary/5 transition-colors"></div>
+</div>
+<span class="font-label-md text-on-surface">Select All (3 Items)</span>
+</label>
+<button class="text-secondary font-label-md hover:underline transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+                        Remove Selected
+                    </button>
+</div>
+<!-- Cart Items List -->
+<div class="space-y-8">
+<!-- Item 1 -->
+<div class="item-row flex flex-col md:flex-row gap-6 p-6 bg-white border border-outline-variant/20 rounded-lg lift-effect transition-all duration-300 relative group reveal">
+<div class="washi-accent bg-tertiary absolute -top-1 -left-2 z-10"></div>
+<div class="flex items-center gap-4">
+<div class="relative w-6 h-6">
+<input checked="" class="custom-checkbox absolute inset-0 opacity-0 z-10 cursor-pointer peer" type="checkbox">
+<div class="checkbox-visual w-6 h-6 border-2 border-primary rounded flex items-center justify-center text-primary peer-hover:bg-primary/5"></div>
+</div>
+<div class="w-32 h-40 bg-surface-container flex-shrink-0 rounded overflow-hidden border border-outline-variant/10">
+<img class="w-full h-full object-cover" data-alt="A professional flat-lay photograph of a premium deep navy leather-bound journal resting on a warm wooden desk. Beside it is a high-end fountain pen with brass accents. Soft morning sunlight filters through a window, highlighting the fine texture of the leather and the cream-colored pages. The atmosphere is quiet, studious, and deeply creative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuvqi-INNYDrqTIOtvlyfjDzyPB4SNuPSTdNDsXRGT5nYRrgxMgMUz3-JR4wJWy8RTe5yprNOsmyvNazWOpnLYO9QyRiRiwdGJVu4pH0n036eIgMHY9-1sEj5u96aM-SXmw_9k4rjBZf5uwxcpkVnhr8Aj5okGkWGef7hxzj3vJH8YRUOgvPby8l5qD6d6bUhxUbK1cBiixuqVcBncqQDAbAHUcS1lUK-PTerw74tOElukDeJadPJS3-5nMZSnlbUxboGBcOCw2As">
+</div>
+</div>
+<div class="flex-grow flex flex-col justify-between py-2">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-md text-secondary mb-1">Stationery</p>
+<h3 class="font-headline-md text-headline-md text-primary">The Midnight Explorer Journal</h3>
+<p class="text-on-surface-variant font-body-md">Scribble &amp; Sketch Original • A5 Hardcover</p>
+</div>
+<p class="font-headline-md text-primary">$32.00</p>
+</div>
+</div>
+<div class="flex items-center justify-between mt-6">
+<div class="flex items-center bg-surface-container-low rounded-full border border-outline-variant/30 p-1">
+<button class="w-8 h-8 flex items-center justify-center text-primary hover:bg-surface-variant rounded-full transition-colors material-symbols-outlined text-[20px]">remove</button>
+<span class="px-4 font-label-md text-primary">01</span>
+<button class="w-8 h-8 flex items-center justify-center text-primary hover:bg-surface-variant rounded-full transition-colors material-symbols-outlined text-[20px]">add</button>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-2 font-label-md">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+                                    Archive
+                                </button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="item-row flex flex-col md:flex-row gap-6 p-6 bg-white border border-outline-variant/20 rounded-lg lift-effect transition-all duration-300 relative group reveal">
+<div class="washi-accent bg-secondary absolute -top-1 -left-2 z-10"></div>
+<div class="flex items-center gap-4">
+<div class="relative w-6 h-6">
+<input checked="" class="custom-checkbox absolute inset-0 opacity-0 z-10 cursor-pointer peer" type="checkbox">
+<div class="checkbox-visual w-6 h-6 border-2 border-primary rounded flex items-center justify-center text-primary peer-hover:bg-primary/5"></div>
+</div>
+<div class="w-32 h-40 bg-surface-container flex-shrink-0 rounded overflow-hidden border border-outline-variant/10">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a set of six premium architectural drawing pens arranged neatly on a sheet of textured drafting paper. The pens have minimalist matte black barrels with fine metal tips. Sharp, clean lines are visible on the paper beneath them. The lighting is crisp and cool, emphasizing the precision and technical nature of the artistic tools." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq4FWga-ZHRyvhIoB0mYx1YrPOlUf3rz4gP6OSuvcqRIpwqPLezcGAVmZlCGBW4GaEMs_sokzvDf-MjO2Lzq2uj5VxTThzsFxkwQ0Ou5ZWDZMkMqXWpr5gzwlWXyy8PWG_r36d13rmaSwt8FvBURyRuzTTusY3GenlZ0CLBKV1prXejjKVBMikN0eYdM36tBloVIsyM8TXpGbly2CTbZ6NkXcRNRV8ocnBU6OEmuL-KwA3UZ98kIJBfzqxwyqdOABDeowcHYj_OSk">
+</div>
+</div>
+<div class="flex-grow flex flex-col justify-between py-2">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-md text-secondary mb-1">Writing Tools</p>
+<h3 class="font-headline-md text-headline-md text-primary">Precise Ink Set (6pc)</h3>
+<p class="text-on-surface-variant font-body-md">Draftsman's Choice • Pigment Fineliners</p>
+</div>
+<p class="font-headline-md text-primary">$24.50</p>
+</div>
+</div>
+<div class="flex items-center justify-between mt-6">
+<div class="flex items-center bg-surface-container-low rounded-full border border-outline-variant/30 p-1">
+<button class="w-8 h-8 flex items-center justify-center text-primary hover:bg-surface-variant rounded-full transition-colors material-symbols-outlined text-[20px]">remove</button>
+<span class="px-4 font-label-md text-primary">02</span>
+<button class="w-8 h-8 flex items-center justify-center text-primary hover:bg-surface-variant rounded-full transition-colors material-symbols-outlined text-[20px]">add</button>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-2 font-label-md">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+                                    Archive
+                                </button>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="item-row flex flex-col md:flex-row gap-6 p-6 bg-white border border-outline-variant/20 rounded-lg lift-effect transition-all duration-300 relative group reveal">
+<div class="washi-accent bg-tertiary-fixed-dim absolute -top-1 -left-2 z-10"></div>
+<div class="flex items-center gap-4">
+<div class="relative w-6 h-6">
+<input checked="" class="custom-checkbox absolute inset-0 opacity-0 z-10 cursor-pointer peer" type="checkbox">
+<div class="checkbox-visual w-6 h-6 border-2 border-primary rounded flex items-center justify-center text-primary peer-hover:bg-primary/5"></div>
+</div>
+<div class="w-32 h-40 bg-surface-container flex-shrink-0 rounded overflow-hidden border border-outline-variant/10">
+<img class="w-full h-full object-cover" data-alt="An artistic composition featuring several rolls of colorful washi tape with botanical and geometric patterns. The rolls are stacked playfully on a background of soft cream cardstock. Delicate dried flower petals are scattered around the base. The lighting is warm and diffused, creating a cozy and inviting creative atmosphere in a light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2serDPrF_QWl3rdSHiRxF3Y8ogqpxAGYyWESafX8Y-eSR9-ZHC2lr_UlxqM_mjIUsR7uCBcziU2-n8skmBc21rrjSVYTZ2e83zm6hD3l5oK1S8Xdn1NLgw4WoCZqgZ2Qsi4Qxu5_xNNZt4Rva34UfD1vuHVYkoHwssUM8PxHU2psY2z_bx68zGV6jfMMvodsRnpDAt5LFHTEJlxoyqTXFri3xgNzBKKtK93D7EyzZDMRHvUD1iFvZmVr5ovr2SrFqZotIovxDj6Y">
+</div>
+</div>
+<div class="flex-grow flex flex-col justify-between py-2">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-md text-secondary mb-1">Accessories</p>
+<h3 class="font-headline-md text-headline-md text-primary">Botanical Washi Collection</h3>
+<p class="text-on-surface-variant font-body-md">Hand-designed • 5 Roll Bundle</p>
+</div>
+<p class="font-headline-md text-primary">$18.00</p>
+</div>
+</div>
+<div class="flex items-center justify-between mt-6">
+<div class="flex items-center bg-surface-container-low rounded-full border border-outline-variant/30 p-1">
+<button class="w-8 h-8 flex items-center justify-center text-primary hover:bg-surface-variant rounded-full transition-colors material-symbols-outlined text-[20px]">remove</button>
+<span class="px-4 font-label-md text-primary">01</span>
+<button class="w-8 h-8 flex items-center justify-center text-primary hover:bg-surface-variant rounded-full transition-colors material-symbols-outlined text-[20px]">add</button>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-2 font-label-md">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+                                    Archive
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Summary Section -->
+<aside class="lg:col-span-4 sticky top-24 reveal reveal-delay-2">
+<div class="bg-white border border-outline-variant/20 rounded-lg p-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[64px] text-primary">auto_stories</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Archive Summary</h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between text-on-surface-variant">
+<span class="font-body-md">Subtotal (4 items)</span>
+<span class="font-body-md font-bold">$99.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span class="font-body-md">Shipping &amp; Handling</span>
+<span class="font-body-md text-tertiary font-bold">FREE</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span class="font-body-md">Estimated Tax</span>
+<span class="font-body-md">$8.15</span>
+</div>
+<div class="hand-drawn-line text-outline-variant/20 my-4"></div>
+<div class="flex justify-between text-primary">
+<span class="font-headline-md">Total</span>
+<span class="font-headline-md">$107.15</span>
+</div>
+</div>
+<div class="space-y-4">
+<a class="block w-full bg-primary text-white py-4 rounded-lg font-label-md hover:opacity-90 active:translate-y-px transition-all shadow-lg shadow-primary/10 text-center" href="{{DATA:SCREEN:SCREEN_2}}">
+                            Proceed to Checkout
+                        </a>
+<p class="text-center text-caption text-on-surface-variant">
+                            Secure transactions. Your creative journey is safe with us.
+                        </p>
+</div>
+<!-- Promo Code -->
+<div class="mt-12">
+<label class="font-label-md text-on-surface mb-2 block">Collector's Code</label>
+<div class="flex gap-2">
+<input class="flex-grow bg-surface border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 font-body-md py-2 transition-colors placeholder:text-outline-variant/50" placeholder="Enter code" type="text">
+<button class="text-secondary font-label-md px-4 hover:bg-secondary/5 transition-colors rounded">Apply</button>
+</div>
+</div>
+</div>
+<!-- Assistance Card -->
+<div class="mt-6 p-6 bg-surface-container-high/50 rounded-lg border border-dashed border-outline-variant/40 reveal reveal-delay-3">
+<h4 class="font-label-md text-primary mb-2">Need guidance?</h4>
+<p class="text-caption text-on-surface-variant mb-4">Our curators are available to help you choose the right tools for your next project.</p>
+<a class="text-secondary font-label-md flex items-center gap-1 group" href="#">
+                        Chat with a Mentor
+                        <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</aside>
+</div>
+<!-- Featured Collections Hint -->
+<section class="mt-24 border-t border-outline-variant/10 pt-16 reveal">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-8 text-center">Incomplete without these?</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<!-- Quick Add Item -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container rounded-lg mb-4 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist ivory porcelain pen holder with a smooth, matte finish. It contains a curated selection of wooden pencils and a single elegant calligraphy brush. The background is a clean, neutral tone, emphasizing the object's sculptural quality and functional simplicity. The lighting is soft and even." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8zSnZ7n4IYiIVUyLuXF9PV3S5VhXzTAQ8V700oXbgkkaQEYgtEoC5LivltxwKwtp-GHOxaV3-9Ne3FPjNjJWUG8MKDOZJfufyfm45dbI5Xb0NDooHn8Sxq4aAvKAZDsjg_8WJjS00HVOmvd-k-XnI2-1xxy1qxmYdH6bxiQ38pVzI1RLQFV9tPBLMtTMTWKP84QQZNL2IMX2M2pvFfSSpdLP9TAljbXwF5-c_NAoCyXbOsc74cccwOl9mw__O-ynszCFuSgNdsGw">
+<button class="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<p class="font-label-md text-primary">Sculptural Pen Holder</p>
+<p class="text-caption text-on-surface-variant">$22.00</p>
+</div>
+<!-- Repeat for other items as needed -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container rounded-lg mb-4 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A collection of small, vintage-style glass ink bottles filled with vibrant, jewel-toned inks like emerald green, deep amethyst, and ruby red. Each bottle has a handcrafted paper label with elegant script. The composition is set on an old, ink-stained artisan's table, creating a sense of history and dedicated craft." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC04dgFN9vgSKbAV4Z-D1__UbXiE072YD7p1NkA97c9KhqEPix8YN8Ar2JCMo-AUir-rusRCeKCbhInKQY3r-rH5CgYra7D7KYPxRG4vMFEDQMueIVWBMYcjYSLr4WBDAJU9_AJVYqgeHcSSd4ULBt2QjKUiKa1wuZtS9r2Eu1XmGDAlL7Be4xCOg0OXu3wrz6KOPt8txBaCDzuC8M6E1kKNkppRsR8CPl9z4gAvy2CjM2BoBtvd6QGJ3CGhu5mWYgiT_33OWPbAs">
+<button class="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<p class="font-label-md text-primary">Pigment Ink Sample Set</p>
+<p class="text-caption text-on-surface-variant">$15.00</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-12 relative z-10 reveal">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-gutter max-w-container-max mx-auto">
+<div class="space-y-4">
+<h3 class="font-headline-md text-headline-md text-primary tracking-tight">The Scribble &amp; Sketch</h3>
+<p class="text-on-surface-variant font-body-md max-w-xs">© 2024 The Scribble &amp; Sketch. Crafted for the curious mind.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-primary uppercase tracking-widest text-[12px] mb-2">Explore</h4>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Journal</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Collections</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Wholesale</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-primary uppercase tracking-widest text-[12px] mb-2">Legal</h4>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Terms</a>
+</div>
+</div>
+</footer>
+<script>
+        // Entry Animations via Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Once animated, no need to observe anymore for entry effect
+                    // revealObserver.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Micro-interaction for quantity buttons
+        document.querySelectorAll('button.material-symbols-outlined').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.add('scale-90');
+                setTimeout(() => this.classList.remove('scale-90'), 150);
+            });
+        });
+
+        // Simple check/uncheck logic for visual feedback
+        document.querySelectorAll('.custom-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const row = this.closest('.item-row');
+                if (row) {
+                    if (this.checked) {
+                        row.style.opacity = '1';
+                    } else {
+                        row.style.opacity = '0.6';
+                    }
+                }
+            });
+        });
+    </script>
+</body></html>

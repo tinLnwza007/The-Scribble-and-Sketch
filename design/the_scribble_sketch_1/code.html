@@ -1,0 +1,462 @@
+<!DOCTYPE html><html class="light" lang="th"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>The Scribble &amp; Sketch | คลังเครื่องเขียนสำหรับนักสร้างสรรค์</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#fe795a",
+                    "inverse-on-surface": "#f2f0ed",
+                    "error": "#ba1a1a",
+                    "primary-container": "#2e3a59",
+                    "on-surface-variant": "#45464e",
+                    "tertiary-fixed": "#c6ecc7",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#0d1a38",
+                    "on-primary-container": "#98a4c9",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#ffdad2",
+                    "outline-variant": "#c6c6ce",
+                    "on-background": "#1b1c1a",
+                    "surface": "#fbf9f5",
+                    "surface-tint": "#525e7f",
+                    "on-primary-fixed-variant": "#3a4666",
+                    "secondary-fixed-dim": "#ffb4a3",
+                    "on-tertiary-container": "#8aae8c",
+                    "on-surface": "#1b1c1a",
+                    "secondary": "#a73920",
+                    "surface-container-low": "#f5f3ef",
+                    "tertiary-fixed-dim": "#abd0ac",
+                    "surface-container": "#efeeea",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#224228",
+                    "surface-container-high": "#eae8e4",
+                    "on-secondary-fixed": "#3d0600",
+                    "primary": "#182442",
+                    "on-tertiary-fixed": "#01210a",
+                    "background": "#fbf9f5",
+                    "on-secondary-container": "#6f1300",
+                    "surface-variant": "#e4e2de",
+                    "inverse-surface": "#30312e",
+                    "surface-dim": "#dbdad6",
+                    "surface-bright": "#fbf9f5",
+                    "surface-container-highest": "#e4e2de",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#bac6ec",
+                    "tertiary": "#0a2c14",
+                    "on-tertiary-fixed-variant": "#2d4e33",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#dae2ff",
+                    "outline": "#75777e",
+                    "inverse-primary": "#bac6ec",
+                    "on-secondary-fixed-variant": "#86220a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "headline-xl": ["Bricolage Grotesque"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "caption": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #fbf9f5;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            background-repeat: repeat;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hand-drawn-border {
+            border-bottom: 2px solid #75777e;
+            border-radius: 2px 4px 1px 3px;
+        }
+        .card-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(167, 57, 32, 0.15);
+        }
+        .washi-tape {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            width: 40px;
+            height: 18px;
+            opacity: 0.8;
+            transform: rotate(2deg);
+        }
+        .torn-edge {
+            clip-path: polygon(0% 0%, 100% 0%, 98% 10%, 100% 21%, 97% 32%, 100% 45%, 98% 56%, 100% 68%, 97% 81%, 100% 92%, 98% 100%, 0% 100%);
+        }
+        
+        /* Reveal Animations */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-surface z-50 border-b border-outline-variant/30">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity active:translate-y-px duration-150">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<a class="font-headline-md text-headline-md text-primary tracking-tight hover:opacity-80 transition-opacity" href="{{DATA:SCREEN:SCREEN_6}}">The Scribble &amp; Sketch</a>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="text-primary font-bold hover:opacity-80 transition-opacity" href="#">สินค้า</a>
+<a class="text-on-surface-variant hover:opacity-80 transition-opacity" href="#">คอลเลกชัน</a>
+<a class="text-on-surface-variant hover:opacity-80 transition-opacity" href="#">เรื่องราว</a>
+</nav>
+<a class="hover:opacity-80 transition-opacity active:translate-y-px duration-150 relative" href="{{DATA:SCREEN:SCREEN_5}}">
+<span class="material-symbols-outlined text-primary">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</a>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-16 px-gutter max-w-container-max mx-auto">
+<!-- Search & Hero Section -->
+<section class="mb-12">
+<div class="max-w-2xl mx-auto text-center mb-10">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-4">คลังอุปกรณ์เครื่องเขียน</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">คัดสรรเครื่องมือสำหรับทุกจินตนาการ ตั้งแต่ปากกาหมึกซึมคลาสสิกไปจนถึงสมุดโน้ตกระดาษทำมือ</p>
+</div>
+<div class="relative max-w-xl mx-auto group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-secondary transition-colors">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-transparent border-none border-b-2 border-outline-variant focus:ring-0 focus:border-secondary transition-all font-body-md text-lg placeholder:text-outline-variant" placeholder="ค้นหาสินค้า..." type="text">
+<div class="absolute bottom-0 left-0 w-full h-0.5 bg-secondary scale-x-0 group-focus-within:scale-x-100 transition-transform origin-left"></div>
+</div>
+</section>
+<!-- Filters & Sorting -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+<div class="flex flex-wrap gap-3">
+<span class="font-label-md text-label-md text-outline uppercase flex items-center gap-2 mr-2">
+<span class="material-symbols-outlined text-sm">filter_list</span> กรอง
+                </span>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant bg-surface-container-lowest text-primary font-label-md hover:bg-secondary hover:text-white hover:border-secondary transition-all">ทั้งหมด</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant font-label-md hover:border-secondary transition-all">ปากกาเขียนแบบ (Fine Writing)</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant font-label-md hover:border-secondary transition-all">สมุดวาดภาพ (Sketchbooks)</button>
+<button class="px-4 py-1.5 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface-variant font-label-md hover:border-secondary transition-all">มาร์คเกอร์ (Markers)</button>
+</div>
+<div class="flex items-center gap-2 border-b border-outline-variant/50 pb-1">
+<span class="font-label-md text-label-md text-outline">เรียงลำดับ:</span>
+<select class="bg-transparent border-none focus:ring-0 font-label-md text-primary cursor-pointer pr-8">
+<option>ยอดนิยม</option>
+<option>ราคาน้อยไปมาก</option>
+<option>ราคามากไปน้อย</option>
+<option>ใหม่ล่าสุด</option>
+</select>
+</div>
+</section>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12" id="product-grid">
+<!-- Product Card 1: Lamy -->
+<div class="group flex flex-col cursor-pointer reveal-on-scroll active" onclick="window.location.href='{{DATA:SCREEN:SCREEN_4}}'">
+<div class="relative aspect-[4/5] bg-surface-container mb-4 overflow-hidden rounded-lg card-lift transition-all duration-300">
+<div class="washi-tape bg-secondary-container/40"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-end studio photograph of a Lamy Safari fountain pen in a sleek matte charcoal finish, lying elegantly on a piece of high-quality cream-colored textured paper. The lighting is soft and directional, casting subtle shadows that highlight the pen's minimalist industrial design. The overall color palette features warm off-whites, deep charcoal, and soft amber tones, reflecting a premium stationery boutique aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI4gkV9jxS9T9FHvWs891_nQaexoFx0uQKPrrhXq3_LfPFL0IxdFHeHYIg7Cc9plQ_WdCVub--M6oqusLFvDU8mvrjvlfbFblaeDJVxObkZlBfGE3cOzvKT2Z-z5fxJT1Ragg4vlmlxPQTw1LPHPYzuihI3jpXIHj_eGrCTbdnrWSRP54sSGYU0TmPpg4oUytSIej7JphqHPunTcWGqjwFwM2Zy3FTErUGe2C5mmENDqdtboC8vf-lN6pjgDf1p_I8ccRiVMAMeZk">
+<div class="absolute bottom-4 left-4">
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur-sm text-secondary font-label-md text-xs rounded-sm torn-edge">NEW</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-1">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest">Lamy</p>
+<h3 class="font-headline-md text-lg text-primary">Safari Fountain Pen - Charcoal</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-headline-md text-xl text-primary">฿1,250</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-caption text-on-surface-variant">คงเหลือ: 5 ชิ้น</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 2: Moleskine -->
+<div class="group flex flex-col cursor-pointer reveal-on-scroll active" onclick="window.location.href='{{DATA:SCREEN:SCREEN_4}}'">
+<div class="relative aspect-[4/5] bg-surface-container mb-4 overflow-hidden rounded-lg card-lift transition-all duration-300">
+<div class="washi-tape bg-tertiary-fixed-dim/40"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A detailed product shot of a Moleskine Classic Notebook with a forest green hard cover. The notebook is slightly open, revealing its ivory-colored lined pages that have a smooth, tactile tooth. It is set against a warm wooden desk background with soft morning light filtering through a window, creating a serene and studious atmosphere. The visual style is crisp and minimal with artisanal details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD810EC8Pbvr06AKVitVz64s65mweDpjE1LUOX86rtFI7eqWNsbTsW2t0XQgPrFsR3p2Eslh9-dwwANMPCa9P_t2EQDiRReVhPCipOPluZWFYpZmvGBIg0TvZRVeuM5TbGbg_1wLJnNhUl86-AI25MGV8fEDkHKZ9f32Umacrc5u8ReXLYa4Os7XBUZkYbigGdHBifsYNedTykVzSxM8JkJbrK0tuYw4FMqy-hgMJlMIBFqXHqoDmnuAtWNSdYqW75l66y69cLC4J8">
+</div>
+<div class="flex flex-col gap-1 px-1">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest">Moleskine</p>
+<h3 class="font-headline-md text-lg text-primary">Classic Notebook Hard Cover - Large</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-headline-md text-xl text-primary">฿950</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="text-caption text-on-surface-variant">เหลือน้อย: 2 ชิ้น</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 3: Kaweco -->
+<div class="group flex flex-col cursor-pointer reveal-on-scroll active" onclick="window.location.href='{{DATA:SCREEN:SCREEN_4}}'">
+<div class="relative aspect-[4/5] bg-surface-container mb-4 overflow-hidden rounded-lg card-lift transition-all duration-300">
+<div class="washi-tape bg-primary-fixed/40"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vintage-inspired close-up of a Kaweco Brass Sport fountain pen. The brass has a natural, beautiful patina, giving it an aged, soulful look. The pen is positioned next to a leather-bound journal on a neutral warm-toned stone surface. The lighting is moody and intimate, highlighting the metallic texture and the classic octagonal shape of the pen. The scene evokes a sense of heritage and timeless craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVxCZE6bFrBG1kpqWngBOoMawg4jA4AeSrxDcg5bhNDorRzx7tczQSns_lVfO3HuHYw0tYkmbh2CvmFNjXeQNo7TNaqreXTJ1Bq5SwJeoPKwJOYm4rMpdKqU5X7oko1aomWNh96c7zC55D89fHxAw05vwIOcFtOvR-zkN6j4tb5xwtAvFRTSAiawPMTJzwJRjIfslVICs6uMHb6SPCyu1h04hYtlES4jS9NgU_XoDFKHD_ZcQ9OfNNQNLcRG7Mz8fqT-4bzZGZ5pk">
+<div class="absolute inset-0 bg-surface-dim/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-primary text-white px-6 py-2 rounded-sm font-label-md active:scale-95 transition-transform">ดูรายละเอียด</button>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-1">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest">Kaweco</p>
+<h3 class="font-headline-md text-lg text-primary">Brass Sport Fountain Pen</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-headline-md text-xl text-primary">฿2,850</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-caption text-on-surface-variant">คงเหลือ: 12 ชิ้น</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 4: Blackwing -->
+<div class="group flex flex-col cursor-pointer reveal-on-scroll active" onclick="window.location.href='{{DATA:SCREEN:SCREEN_4}}'">
+<div class="relative aspect-[4/5] bg-surface-container mb-4 overflow-hidden rounded-lg card-lift transition-all duration-300">
+<div class="washi-tape bg-on-tertiary-container/30"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A set of Blackwing 602 pencils displayed in their iconic box. The pencils feature a grey metallic finish and a unique rectangular ferrule with a pink eraser. One pencil is sharpened, showing the fine cedar wood grain. The background is a minimalist artist's studio with sketches in the background. The lighting is bright and clean, emphasizing the professional grade of the stationery. The color scheme is sophisticated and balanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSZI10WFcfapnNTGnP_1dcl9YcgeBNOLmy14YLZVZpiqSQRCy6xZjKvFN2GGO8QAsCtmYe8hGOInuGHTGIU6Y8ZLk6xWWgW_n4yENjw5v9MKJ43N4FCSlvzHQGphIjgZRt4yuviuH1cCxuxFs7r6ky-P7xsoVyVb2mupvnaR2zvLYOmHNRIJTR87mh_ToKRhvUTYmtBLmVbVrxR15pMprfUVYUZASgGcm-jWPISPgpJn7LRuPaRXMgzg0Fmh4aaAQxBAb8LhvX0eg">
+<div class="absolute top-4 right-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-1">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest">Blackwing</p>
+<h3 class="font-headline-md text-lg text-primary">602 Pencils - Box of 12</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-headline-md text-xl text-primary">฿1,100</span>
+<div class="flex items-center gap-1.5 text-error">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-caption font-bold">สินค้าหมด</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 5: Midori -->
+<div class="group flex flex-col cursor-pointer reveal-on-scroll active" onclick="window.location.href='{{DATA:SCREEN:SCREEN_4}}'">
+<div class="relative aspect-[4/5] bg-surface-container mb-4 overflow-hidden rounded-lg card-lift transition-all duration-300">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A Midori MD Paper notebook, known for its minimalist Japanese design. The notebook has a clean white cover and a simple wax paper wrapper. It lies flat on a light grey linen cloth, surrounded by subtle shadows. The aesthetic is incredibly pure and zen-like, focusing on the quality of the paper. The image uses a high-key lighting setup with very soft transitions, emphasizing the brand's 'blank space' philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCowocPhgECGT8pSseeHdCV0JVKI8P23NwYx_eM4_-OfsBC1cwyHEXYDWvlmEiz_ndrbFNbkTZJyDRQK3_9NH2YEbPmRACQXZ7_M1q9VYIZFu4X5tV-bd7p1LZGmaQa_QlR2uOji8YSfHrYdEQVRONp7g9PH_CVUznrnDFUFSpGXW1O1ktphHYTKZNShLYqHRPCLdcWpvcNblQ1yIQE8ZnTMThrSUT2fH17epzlCWuzBcMhxGmjp5UDeKdE3Yuk5ZBukATqy2Uq6-Q">
+</div>
+<div class="flex flex-col gap-1 px-1">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest">Midori</p>
+<h3 class="font-headline-md text-lg text-primary">MD Notebook - A5 Lined</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-headline-md text-xl text-primary">฿420</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-caption text-on-surface-variant">คงเหลือ: 24 ชิ้น</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 6: Pilot -->
+<div class="group flex flex-col cursor-pointer reveal-on-scroll active" onclick="window.location.href='{{DATA:SCREEN:SCREEN_4}}'">
+<div class="relative aspect-[4/5] bg-surface-container mb-4 overflow-hidden rounded-lg card-lift transition-all duration-300">
+<div class="washi-tape bg-secondary-fixed/40"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up shot of the nib of a Pilot Iroshizuku ink bottle. The heavy glass bottle is shaped like a drop of water and contains deep Kon-peki cerulean blue ink. A few drops of ink are artfully splattered on a clean white background. The light reflects off the glass and the ink surface, creating beautiful caustic effects. The mood is artistic and focused on the vibrant, high-quality pigments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwGCAcSG5rByBhrLzrHN8JVAzrXPGpT9w9yJTmQ4Ib966oNaKvXvifPVpuahw4UtinFzMYIzRj3U0awFtjfXjqJVIvech9hDhRJGegOIbaZRhaR82_MVGbibf5KLi4GkrFqPmP1YCegHWhmVcXIhbylfFKEAx5IFkUMJGGW71PoZouR2Aamr00Y2fH5Fs02mrRDqLKXd9TrnGdcNxGybGGDaOY6TIf1XMhM1jNw6A7rjG8xjA4CLrjW-Cl9851J0-d7AgW77BogyE">
+</div>
+<div class="flex flex-col gap-1 px-1">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest">Pilot</p>
+<h3 class="font-headline-md text-lg text-primary">Iroshizuku Ink - Kon-peki (Deep Blue)</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-headline-md text-xl text-primary">฿890</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-caption text-on-surface-variant">คงเหลือ: 8 ชิ้น</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 7: Faber-Castell -->
+<div class="group flex flex-col cursor-pointer reveal-on-scroll active" onclick="window.location.href='{{DATA:SCREEN:SCREEN_4}}'">
+<div class="relative aspect-[4/5] bg-surface-container mb-4 overflow-hidden rounded-lg card-lift transition-all duration-300">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional set of Faber-Castell Polychromos colored pencils arranged in a gradient of warm oranges and reds. The pencils are displayed in a tin box, which sits on an artist's workbench next to a half-finished botanical illustration. The lighting is warm and golden, highlighting the smooth wood and the rich pigment cores. The style is detailed and inspiring, showcasing the professional quality of the artistic tools." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ7e9AP0A0i7biz_b8HQsgch7MNH_qaXz98X8igPA9MJRnarmPrzr2WPErZanNZZ5RakJ_la3KcNRH7VzFUTcV-c0C799dkNSXl7CppTwQhEtIgcM_g8oqzD8o-5gSFqgKhGQqSDq9baQhasL5N28fNV6uzxx-PMbBmnoIyDAyxBTqXhctYGV8CZtE7U2_I_imjM3wmScYINVgVaY7g6N6drHRd2nTs8LOzM67LoluPUxmpdWlq_vM2_8MqC2TZJE7-ElfUd5Ayiw">
+</div>
+<div class="flex flex-col gap-1 px-1">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest">Faber-Castell</p>
+<h3 class="font-headline-md text-lg text-primary">Polychromos Colored Pencils - 12 Set</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-headline-md text-xl text-primary">฿1,450</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="text-caption text-on-surface-variant">เหลือน้อย: 3 ชิ้น</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 8: Traveler's Company -->
+<div class="group flex flex-col cursor-pointer reveal-on-scroll active" onclick="window.location.href='{{DATA:SCREEN:SCREEN_4}}'">
+<div class="relative aspect-[4/5] bg-surface-container mb-4 overflow-hidden rounded-lg card-lift transition-all duration-300">
+<div class="washi-tape bg-tertiary-container/30"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A worn Traveler's Notebook in camel brown leather, filled with various inserts, postcards, and tickets sticking out. It rests on a rustic map on a wooden table, suggesting a life of travel and adventure. The lighting is warm and nostalgic, with a vintage film-like grain. The image captures the tactile beauty of aged leather and the personal history of a well-used journal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUO4RUHiCH-dfmlSBVYFBRsUh5kJKFHMr-W4-d64-MMOYuTtX3556UJj4KRtHkgmtFHs7VDY9XiFz2BC3rFUcxTP37r6LmX-QM0sScUQhIjkN4lm_lXD04yecPFLozm5zuU7FPKubR-9ssCdBbwDKtY2ctqHdODsgZtgfEklDe1vEVgMoj9SnwPsEpudYld7zBajlzL2WcxEU9jElwBg-33V5KcmxZ9XvzG4bzYZ_cf9SLqidWWGI9y-sIk_Qm5ek9I40-1-JglUM">
+</div>
+<div class="flex flex-col gap-1 px-1">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest">Traveler's Company</p>
+<h3 class="font-headline-md text-lg text-primary">Traveler's Notebook - Camel Leather</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="font-headline-md text-xl text-primary">฿2,100</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-caption text-on-surface-variant">คงเหลือ: 4 ชิ้น</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<nav class="mt-20 flex justify-center items-center gap-4">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-primary text-white font-label-md">1</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant text-on-surface-variant font-label-md hover:bg-surface-container transition-colors">2</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant text-on-surface-variant font-label-md hover:bg-surface-container transition-colors">3</button>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-12 mt-16">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight">The Scribble &amp; Sketch</h2>
+<p class="font-body-md text-on-surface-variant max-w-xs text-sm">
+                    เราเชื่อว่าทุกความคิดที่ยิ่งใหญ่เริ่มต้นด้วยเครื่องมือที่เหมาะสม 
+                    คัดสรรเครื่องเขียนคุณภาพเยี่ยมเพื่อสนับสนุนทุกการเดินทางของความคิดสร้างสรรค์
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-label-md text-primary uppercase tracking-widest text-xs">สำรวจ</h3>
+<nav class="flex flex-col gap-2">
+<a class="text-on-surface-variant hover:text-secondary transition-colors text-sm" href="#">สินค้าเข้าใหม่</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors text-sm" href="#">สมุดโน้ตแนะนำ</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors text-sm" href="#">ชุดเซ็ตของขวัญ</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors text-sm" href="#">วารสารการเขียน</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-label-md text-primary uppercase tracking-widest text-xs">ติดตามเรา</h3>
+<div class="flex gap-4 mb-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-secondary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-secondary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg">photo_camera</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-secondary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+</div>
+<div class="border-t border-outline-variant/30 pt-4">
+<p class="font-caption text-caption text-on-surface-variant">
+                        © 2024 The Scribble &amp; Sketch. Crafted for the curious mind.
+                    </p>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for the search bar
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('shadow-sm');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('shadow-sm');
+        });
+
+        // Add small hover interaction to cards
+        document.querySelectorAll('.card-lift').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1)';
+            });
+        });
+
+        // Reveal on Scroll Logic
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Sequential delay based on grid appearance
+                    setTimeout(() => {
+                        entry.target.classList.add('active');
+                    }, index % 4 * 100); // 100ms delay between items in a row
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            revealObserver.observe(el);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My Creative Archive — จดบันทึกไอเดียสร้างสรรค์ของคุณ ด้วย Todo-List ที่ออกแบบเพื่อนักสร้างสรรค์">
+  <title>My Creative Archive | Todo-List</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- ═══════════ HEADER ═══════════ -->
+    <header class="app-header" id="app-header">
+      <h1 class="app-header__brand">The Scribble & Sketch</h1>
+      <div class="app-header__actions">
+        <!-- Light/Dark Toggle -->
+        <button class="app-header__icon" aria-label="สลับโหมดมืด/สว่าง" id="theme-toggle-btn">
+          <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+        </button>
+        <button class="app-header__icon" aria-label="Menu" id="header-menu-btn">
+          <span class="material-symbols-outlined">edit_note</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero reveal" id="hero-section">
+      <span class="hero__badge">Creative Todo</span>
+      <h2 class="hero__title">
+        <span class="pencil-underline">My Creative</span> Archive
+      </h2>
+      <p class="hero__subtitle">
+        จดทุกไอเดีย วางแผนทุกโปรเจกต์ เพราะทุกจุดเริ่มต้นที่ยิ่งใหญ่ เริ่มจากบันทึกเล็กๆ
+      </p>
+    </section>
+
+    <!-- ═══════════ ADD FORM ═══════════ -->
+    <form class="add-form reveal" id="add-todo-form">
+      <input
+        type="text"
+        class="add-form__input"
+        id="todo-input"
+        placeholder="เขียนสิ่งที่ต้องทำ..."
+        autocomplete="off"
+        maxlength="200"
+        aria-label="เพิ่ม todo ใหม่"
+      >
+      <button type="submit" class="add-form__btn" id="add-todo-btn">
+        <span class="material-symbols-outlined" style="font-size:18px;">add</span>
+        เพิ่ม
+      </button>
+    </form>
+
+    <!-- ═══════════ TOOLBAR (FILTER & VIEW SWITCHER) ═══════════ -->
+    <div class="toolbar reveal" id="toolbar">
+      <!-- Filter Tabs (List View Only) -->
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-tab filter-tab--active" data-filter="all" id="filter-all">
+          ทั้งหมด
+          <span class="filter-tab__count" id="count-all">0</span>
+        </button>
+        <button class="filter-tab" data-filter="active" id="filter-active">
+          กำลังทำ
+          <span class="filter-tab__count" id="count-active">0</span>
+        </button>
+        <button class="filter-tab" data-filter="done" id="filter-done">
+          เสร็จแล้ว
+          <span class="filter-tab__count" id="count-done">0</span>
+        </button>
+      </div>
+
+      <!-- View Switcher -->
+      <div class="view-switcher" id="view-switcher">
+        <button class="view-btn view-btn--active" data-view="list" id="view-list-btn" title="มุมมองปกติ">
+          <span class="material-symbols-outlined">list</span>
+          แบบรายการ
+        </button>
+        <button class="view-btn" data-view="board" id="view-board-btn" title="มุมมองบอร์ด Trello">
+          <span class="material-symbols-outlined">view_kanban</span>
+          แบบบอร์ด
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats Bar (List View only) -->
+    <div class="stats-bar reveal" id="stats-bar">
+      <span class="stats-bar__info" id="stats-info">
+        <strong>0</strong> รายการ · <strong>0</strong> เสร็จแล้ว
+      </span>
+      <button class="stats-bar__clear-btn" id="clear-done-btn" style="display:none;">
+        ลบที่เสร็จแล้ว
+      </button>
+    </div>
+
+    <!-- ═══════════ LIST VIEW ═══════════ -->
+    <ul class="todo-list" id="todo-list">
+      <!-- Todo items rendered here in List view -->
+    </ul>
+
+    <!-- ═══════════ TRELLO BOARD VIEW ═══════════ -->
+    <div class="trello-board" id="trello-board">
+      
+      <!-- To Do Column -->
+      <div class="board-column board-column--todo" data-status="todo">
+        <div class="board-column__header">
+          <span class="board-column__title">สิ่งที่ต้องทำ</span>
+          <span class="board-column__count" id="todo-count">0</span>
+        </div>
+        <ul class="board-column__list" id="todo-column-list" data-status="todo">
+          <!-- cards -->
+        </ul>
+      </div>
+
+      <!-- Doing Column -->
+      <div class="board-column board-column--doing" data-status="doing">
+        <div class="board-column__header">
+          <span class="board-column__title">กำลังทำ</span>
+          <span class="board-column__count" id="doing-count">0</span>
+        </div>
+        <ul class="board-column__list" id="doing-column-list" data-status="doing">
+          <!-- cards -->
+        </ul>
+      </div>
+
+      <!-- Done Column -->
+      <div class="board-column board-column--done" data-status="done">
+        <div class="board-column__header">
+          <span class="board-column__title">เสร็จแล้ว</span>
+          <span class="board-column__count" id="done-count">0</span>
+        </div>
+        <ul class="board-column__list" id="done-column-list" data-status="done">
+          <!-- cards -->
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ═══════════ EMPTY STATE ═══════════ -->
+    <div class="empty-state" id="empty-state" style="display:none;">
+      <div class="empty-state__icon">
+        <span class="material-symbols-outlined">draw</span>
+      </div>
+      <h3 class="empty-state__title">ยังไม่มีบันทึก</h3>
+      <p class="empty-state__text">เริ่มต้นเขียนสิ่งที่ต้องทำ แล้วทุกไอเดียจะมีที่ทางของมัน</p>
+    </div>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="app-footer" id="app-footer">
+      <p class="app-footer__brand">The Scribble & Sketch</p>
+      <p class="app-footer__text">Crafted for the curious mind. © 2024</p>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

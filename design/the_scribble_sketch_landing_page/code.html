@@ -1,0 +1,423 @@
+<!DOCTYPE html><html class="light scroll-smooth" lang="th"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>The Scribble &amp; Sketch | พื้นที่สำหรับคนรักเครื่องเขียน</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#6f1300",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#2e3a59",
+                    "surface-bright": "#fbf9f5",
+                    "on-surface-variant": "#45464e",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#3a4666",
+                    "primary-fixed": "#dae2ff",
+                    "tertiary": "#0a2c14",
+                    "on-primary-fixed": "#0d1a38",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#abd0ac",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#efeeea",
+                    "on-secondary-fixed": "#3d0600",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#a73920",
+                    "on-background": "#1b1c1a",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#224228",
+                    "surface-tint": "#525e7f",
+                    "on-primary-container": "#98a4c9",
+                    "surface-container-high": "#eae8e4",
+                    "surface-container-highest": "#e4e2de",
+                    "on-tertiary-fixed": "#01210a",
+                    "outline": "#75777e",
+                    "on-tertiary-container": "#8aae8c",
+                    "primary": "#182442",
+                    "inverse-primary": "#bac6ec",
+                    "on-secondary-fixed-variant": "#86220a",
+                    "outline-variant": "#c6c6ce",
+                    "surface-container-low": "#f5f3ef",
+                    "surface": "#fbf9f5",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#ffb4a3",
+                    "on-tertiary-fixed-variant": "#2d4e33",
+                    "on-surface": "#1b1c1a",
+                    "inverse-surface": "#30312e",
+                    "inverse-on-surface": "#f2f0ed",
+                    "primary-fixed-dim": "#bac6ec",
+                    "surface-dim": "#dbdad6",
+                    "secondary-container": "#fe795a",
+                    "background": "#fbf9f5",
+                    "surface-variant": "#e4e2de",
+                    "secondary-fixed": "#ffdad2",
+                    "tertiary-fixed": "#c6ecc7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-image: radial-gradient(#18244211 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            background-color: #fbf9f5;
+        }
+        
+        .paper-texture {
+            position: relative;
+        }
+        .paper-texture::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+        }
+
+        .washi-tape {
+            height: 12px;
+            width: 40px;
+            position: absolute;
+            top: -6px;
+            right: 16px;
+            transform: rotate(2deg);
+            z-index: 10;
+        }
+
+        .hand-drawn-border {
+            border: 1.5px solid #182442;
+            border-radius: 2px;
+            box-shadow: 2px 2px 0px 0px #a73920;
+        }
+
+        .lift-effect:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(167, 57, 32, 0.1);
+        }
+
+        .torn-edge {
+            mask-image: url("data:image/svg+xml,%3Csvg width='100' height='10' viewBox='0 0 100 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 L5 8 L10 9 L15 7 L20 10 L25 8 L30 9 L35 7 L40 10 L45 8 L50 9 L55 7 L60 10 L65 8 L70 9 L75 7 L80 10 L85 8 L90 9 L95 7 L100 10 Z' fill='black'/%3E%3C/svg%3E");
+            mask-size: 100% 10px;
+            mask-position: bottom;
+            mask-repeat: no-repeat;
+        }
+
+        .pencil-underline {
+            background: linear-gradient(to right, #fe795a 0%, #fe795a 100%);
+            background-size: 100% 2px;
+            background-position: 0 95%;
+            background-repeat: no-repeat;
+        }
+
+        /* Scroll Reveal Styles */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-on-surface paper-texture">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant/30">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">menu</button>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">The Scribble &amp; Sketch</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center"><a class="font-label-md text-primary font-bold hover:opacity-80 transition-opacity" href="#">หน้าแรก</a><a class="font-label-md text-on-surface-variant hover:opacity-80 transition-opacity" href="{{DATA:SCREEN:SCREEN_7}}">สินค้า (Catalog)</a><a class="font-label-md text-on-surface-variant hover:opacity-80 transition-opacity" href="{{DATA:SCREEN:SCREEN_5}}">ตะกร้า (Cart)</a><a class="font-label-md text-on-surface-variant hover:opacity-80 transition-opacity" href="#">โปรไฟล์ (Profile)</a></nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">search</button>
+<a class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity" href="{{DATA:SCREEN:SCREEN_5}}">shopping_bag</a>
+</div>
+</div>
+</header>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[707px] flex items-center overflow-hidden bg-surface-bright reveal">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full py-12">
+<div class="z-10 order-2 md:order-1">
+<span class="inline-block px-4 py-1 mb-6 bg-secondary-fixed text-on-secondary-fixed-variant font-label-md rounded-full">Stationery Boutique</span>
+<h2 class="font-headline-xl text-headline-xl text-primary mb-6">
+<span class="pencil-underline">เส้นทางความคิดสร้างสรรค์</span><br>เริ่มต้นที่นี่
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                        อุปกรณ์เกรดพรีเมียมสำหรับศิลปินและนักเขียนทุกคน คัดสรรมาเพื่อเปลี่ยนทุกการขีดเขียนให้เป็นช่วงเวลาที่แสนพิเศษ
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-primary text-on-primary font-label-md lift-effect transition-all flex items-center gap-2">
+                            ช้อปเลย
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="px-8 py-4 border-2 border-primary text-primary font-label-md hover:bg-surface-container transition-colors">
+                            ดูคอลเลกชันใหม่
+                        </button>
+</div>
+</div>
+<div class="relative order-1 md:order-2">
+<div class="aspect-square relative z-10 hand-drawn-border overflow-hidden transform md:rotate-2">
+<img class="w-full h-full object-cover" data-alt="A top-down aesthetic shot of a workspace featuring a high-quality open linen notebook, several brass fountain pens, and a wooden desk. The lighting is warm and natural, coming from a side window, highlighting the texture of the paper and the metallic sheen of the pens. The overall vibe is minimalist, clean, and inviting, with a palette of cream, deep navy, and terracotta." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLSmckMw-jVStowoQcY7TRRtzkTXxr18DQoNKJn8lh3dI8fC3l7rNwAM9kQGnnkJk509QzwLEaT08DEkk5Uwp88g8aGp6n4y47ZZeMaZ81KeQ10tMQhWUCfirmO41G3PtwyCXg2ovjtq48hpqvmke6fV6VVy4OQR6fiOze7dyHvL9B4gaOfLEbDRsK82rJGMvjvQLWiORKWgd5YT9oYrQB7JnIHFY_STL10TgC2-dh8VyRqZtiWgw_mLMQ7Pdt5Chxd-BGUH_pqaM">
+</div>
+<div class="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary-container opacity-20 rounded-full blur-3xl z-0"></div>
+</div>
+</div>
+</section>
+<!-- Collections Section -->
+<section class="py-24 bg-surface">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4 reveal">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">คอลเลกชันยอดนิยม</h2>
+<p class="font-body-md text-on-surface-variant">เลือกสรรตามสไตล์การสร้างสรรค์ของคุณ</p>
+</div>
+<a class="text-secondary font-label-md flex items-center gap-1 hover:underline" href="#">ดูทั้งหมด <span class="material-symbols-outlined text-[16px]">trending_flat</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Collection Card 1 -->
+<div class="group relative bg-surface-container-low p-6 lift-effect transition-all border border-outline-variant/10 reveal">
+<div class="washi-tape bg-secondary/40"></div>
+<div class="aspect-[4/5] overflow-hidden mb-6 bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up of illustration gear including professional graphite pencils, charcoal sticks, and a sketchbook with light pencil sketches. The style is artistic and tactile, showing the grit of the lead and the grain of the paper. Light-mode aesthetic with soft shadows and high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxFQ2t4UrKJ47qwRY6MRJtVlL3nnNZOcnSLTiUni9a2aeDi6a_BaMDAqYv9ueZYqPlN2HPn0x9kMfH9AL1SXcnaGejGmSQznlS3Dekz255BSOPR5lY2kPwJ5Ll2TXzkdjb8XS520YZpilt6EZiMAnl7qFobuNPrrS6TwKY9XglKqHx35giUliB2eEFA96m2cVvcKW1c8TrxfdeZ-gA5p_UxC8rV2274u65EoILjAzv6BtFjUSM7ZXispLNT2dp6kJm9cJn3Tesk14">
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Illustration Gear</h3>
+<p class="font-body-md text-on-surface-variant mb-4">อุปกรณ์วาดเขียนสำหรับนักวาดภาพประกอบมืออาชีพ</p>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+</div>
+<!-- Collection Card 2 -->
+<div class="group relative bg-surface-container-low p-6 lift-effect transition-all border border-outline-variant/10 md:mt-12 reveal">
+<div class="washi-tape bg-tertiary/40"></div>
+<div class="aspect-[4/5] overflow-hidden mb-6 bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A collection of fine writing instruments including elegant fountain pens in deep blue and gold, ink bottles with hand-written labels, and high-quality ivory paper. Elegant and sophisticated atmosphere, focused on the craftsmanship of the pens and the depth of the ink colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIlj1bAccEWVx2ZFMBKKUVdUimf9-0MkPStZY2BLCk_rLJP4PottMhtyTXs0-uM1J8WL39Lp8Ic7dBd--1I_rQfvS_DZ8EtOELG2w_VgchqQkG1lQ9QNy0dd_dAXqp4SQ3tX3rnf4QQ1fDbdNho3gbsN1G2_2pXH67_MZ87mZO0bA5rj16CaUjTgvaLgMXGU8ufSQoV1FN8b33HdLbFvgBXdEjBiyIeKiP2bKUWepp6XuDD11UiCufqY2D-LoVeZGw9yT-kjShkgs">
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Fine Writing</h3>
+<p class="font-body-md text-on-surface-variant mb-4">สัมผัสสุนทรียภาพแห่งการเขียนด้วยปากกาคุณภาพเยี่ยม</p>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+</div>
+<!-- Collection Card 3 -->
+<div class="group relative bg-surface-container-low p-6 lift-effect transition-all border border-outline-variant/10 reveal">
+<div class="washi-tape bg-secondary-container/40"></div>
+<div class="aspect-[4/5] overflow-hidden mb-6 bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Daily essentials like aesthetic washi tapes, colorful markers, memo pads, and small stickers arranged neatly on a light wood surface. The lighting is bright and cheerful, highlighting a diverse color palette of pastels and earth tones. Ideal for journaling and organization lovers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtwYxxDSEViamQp98lVN5Z2lCASvq1FAEZ2zZ7dKO2i7AE3exX6zep7jEhUle6W0b3Rx2ueg2FZKd6SONudXUFE7w7HAGjL_8NaGJO0oyV6-5ChUxxHYM_yXj8XvGzhzTDx8IE-YEsv47Y1jvK3WMBUB4gcNnwbPLm3LMIph5C0L_fQqKB3xqNb3FAstzcDtxl9YtzEWJf5G18NIF9816WIjYK4BC1jfMdpDBJDmEDaQOX4QuMBYdmqzwF-HJwZspMsRV-KfunO7A">
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Daily Essentials</h3>
+<p class="font-body-md text-on-surface-variant mb-4">รวมไอเทมที่ต้องมีติดโต๊ะ เพื่อการจดบันทึกที่สนุกทุกวัน</p>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-headline-lg text-primary">สินค้าแนะนำ</h2>
+<div class="w-24 h-1 bg-secondary-container mx-auto mt-4 rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Product 1 -->
+<div class="flex flex-col reveal">
+<a class="relative mb-6 group cursor-pointer block overflow-hidden bg-surface rounded-xl border border-outline-variant/20" href="{{DATA:SCREEN:SCREEN_4}}"><img class="w-full h-[400px] object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A luxury fountain pen with a gold nib and a deep navy blue body, lying diagonally across a thick piece of creamy parchment paper. The focus is sharp on the nib detailing, with a soft blur in the background. High-end stationery product photography with elegant lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp-QPBzCZtPvJizfKKUIoPmRdSJKMWg-yd_aYbnao691Y583_Jev3MLohnvxIRf31edxaqtCkseqCcLCG_GqKgRmo42iMPO8yuBZV1ZwXUQRpOfZe5Nc4CyhGctNYbnJyfkAWe0kIljYmJ0v7Lx1UbsC8i5HVP4XWYN_f8BeABYWiAtjJDo6jod7XNnnyADIBSTNBBNGmyGRIOIInP3hE4eXuqLyyj2nROf4xIhSzyCfHaA31IS-IcgLGp-XxTy1vpUWy5mFqfXJ0"><button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined text-primary">add_shopping_cart</span></button></a>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary">Fountain Pen Classic</h4>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-widest mt-1">Fine Writing</p>
+</div>
+<span class="font-headline-md text-headline-md text-secondary">฿2,450</span>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="flex flex-col reveal">
+<a class="relative mb-6 group cursor-pointer block overflow-hidden bg-surface rounded-xl border border-outline-variant/20" href="{{DATA:SCREEN:SCREEN_4}}"><img class="w-full h-[400px] object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A linen-bound sketchbook in a soft sage green color, lying flat with a single piece of washi tape on the cover. The texture of the linen fabric is clearly visible. The mood is calm, serene, and modern-minimalist. Background is a neutral-toned clean desk." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-_e4ajdqdYQqyNkdeTNvtfN2gRMwp6VRwG8DtW43CkWY9pOFjaHecft4sDQn7NkhyUfXgsUunTYQm1mmDyzha8fDr5h-7MkIhOlaJYHn_GkFwyjCSsaczC6P5RSdnYZQE6TJjS_vad_FxSoGfCL3fcOGWVxZkTfcbWNfwhCNK0cQC5HqsedQmvYpxVDFdpczwQ5uM22TGZHjtv6HtHrLTTivAWPC6gYw2VF7qTEN2MjG4uGXpMudXB9YXr0OkDZ3lbVdxqaG2yEA"><button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined text-primary">add_shopping_cart</span></button></a>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary">Linen Sketchbook</h4>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-widest mt-1">Sketchbooks</p>
+</div>
+<span class="font-headline-md text-headline-md text-secondary">฿890</span>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="flex flex-col reveal">
+<a class="relative mb-6 group cursor-pointer block overflow-hidden bg-surface rounded-xl border border-outline-variant/20" href="{{DATA:SCREEN:SCREEN_4}}"><img class="w-full h-[400px] object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A set of high-quality artist markers in various earthy tones arranged in a minimalist ceramic holder. The markers have matte bodies and are shown against a bright, airy background. Modern design aesthetic for creative professionals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTEoP9v0Qs4BZkQLgKgql4AICvyyp1ISUGyDGlPIKXuHDxKmxKVOUAsSEJzaaXlmratpU880PxLMyZHpz1pOeIZJ7gtIiBkO-WLDQrINLH2ozm70fFf-hHBi8fl0-FCjI0Ra7q_iCQOOmgGHW1c8HuPq8uGnJ24mVCwEcfN1DYHQ2ZUwkKVo6kEFM9JmFD4VkIVuHpr8lEi7SlH2JJCzv0T_Qrptanckto45fCPSx-8p9WofO3s66Yb-t5HeAJNmOqwvLYFzxqAuk"><button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined text-primary">add_shopping_cart</span></button></a>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary">Artist Markers (Set of 12)</h4>
+<p class="font-caption text-caption text-on-surface-variant uppercase tracking-widest mt-1">Illustration Gear</p>
+</div>
+<span class="font-headline-md text-headline-md text-secondary">฿1,200</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us Section -->
+<section class="py-24 bg-surface overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="bg-surface-container-low rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 relative reveal">
+<div class="flex-1 z-10">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">มากกว่าแค่เครื่องเขียน</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                            ที่ The Scribble &amp; Sketch เราเชื่อว่า "เครื่องมือที่ดี" คือกุญแจสำคัญในการปลดล็อกจินตนาการ เราคัดสรรเฉพาะอุปกรณ์ที่มีคุณภาพและดีไซน์ที่เหนือกาลเวลา เพื่อสนับสนุนทุกการสร้างสรรค์ในชุมชนนักเขียนและศิลปินไทย ให้ทุกไอเดียของคุณมีพื้นที่ที่สวยงามในการเติบโต
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="Portrait of a friendly female shop owner in a cozy studio setting, wearing a simple linen apron and holding a fountain pen. Warm, welcoming smile, soft lighting, creative and professional atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2aImDM0V03CpxsFFhJNID4ReBg3Bc3chtaqQQiOnoGTmct3aF1e4JjXcvVOUiJ63ko9h3MghDO9VFrwo6bDKWzZ6NBZHfffCzoDqqlZt_3GXedP8Xxi8Aj2S-KzEKwPDHe1tti9XttWyA1KAyYej1y6JRHUiMv32iJqVtgzhHjJco2NJ2r3Lo9e0Qo3lDG5dthiBgDyORd3T7FJCl6pmyuGWxc4_B80eEsicLkX3fqLQJNXVlfGtc5j5Bv9vpDTSp7ThcK17kOa4">
+</div>
+<div>
+<p class="font-label-md text-primary">ภัคจิรา นามสกุล</p>
+<p class="font-caption text-on-surface-variant">ผู้ก่อตั้ง The Scribble &amp; Sketch</p>
+</div>
+</div>
+</div>
+<div class="flex-1 relative reveal">
+<div class="aspect-video bg-surface-container-high rounded-xl overflow-hidden shadow-xl transform -rotate-3">
+<img class="w-full h-full object-cover" data-alt="Inside a beautifully curated stationery boutique with high wooden shelves filled with notebooks, pens, and desk accessories. The shop has a warm, vintage feel with modern minimalist touches, lots of natural light, and green plants in corners." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWteWy5kNVJHh2Cn5V2P0Du-wcvLPQRBlXj3fpk4JNQSb0igIPyqKvGhh6peP46TOXd0AqDKdp2sXFIFjtLWVvuT10bqdbNYKNew88FVM7N5h5GF9Stoyf-gFIAQv0_6dSTvmHHmVY9azFvWvuKKFaOgOO6KVVUdj917aWP6YF81qIIDHm_fnry6vVkTg6NMM-i16QgDWhv9Q_g1cw3Hm33ptD1h1fCcQjRZRq5zrgtIeQ6lJviNJqkQPP46WOqNOyBqP4G2ytEo4">
+</div>
+<!-- Decorative ink splash representation -->
+<div class="absolute -top-4 -right-4 w-20 h-20 bg-primary opacity-5 rounded-full blur-xl"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-24 bg-primary text-on-primary">
+<div class="max-w-3xl mx-auto px-gutter text-center reveal">
+<span class="material-symbols-outlined text-[48px] text-on-primary-container mb-6">edit_note</span>
+<h2 class="font-headline-lg text-headline-lg mb-4">Join the Creative Circle</h2>
+<p class="font-body-md text-on-primary-container mb-10">รับแรงบันดาลใจ เทคนิคการใช้เครื่องเขียน และโปรโมชันพิเศษก่อนใคร</p>
+<form class="flex flex-col md:flex-row gap-4">
+<input class="flex-1 bg-primary-container/30 border-b-2 border-on-primary-container/30 border-t-0 border-x-0 focus:ring-0 focus:border-secondary-container text-on-primary px-4 py-4 transition-all" placeholder="อีเมลของคุณ" type="email">
+<button class="px-10 py-4 bg-secondary-container text-on-secondary-container font-label-md lift-effect transition-all">
+                        ติดตามข่าวสาร
+                    </button>
+</form>
+<p class="font-caption text-on-primary-container/60 mt-6">*เราสัญญาว่าจะไม่ส่งสแปม และคุณสามารถยกเลิกได้ทุกเมื่อ</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-12 reveal">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight">The Scribble &amp; Sketch</h2>
+<p class="font-body-md text-on-surface-variant max-w-xs">
+                    © 2024 The Scribble &amp; Sketch. Crafted for the curious mind.
+                </p>
+<div class="flex gap-4 mt-2">
+<a class="material-symbols-outlined text-on-surface-variant hover:text-secondary transition-colors" href="#">brand_awareness</a>
+<a class="material-symbols-outlined text-on-surface-variant hover:text-secondary transition-colors" href="#">alternate_email</a>
+<a class="material-symbols-outlined text-on-surface-variant hover:text-secondary transition-colors" href="#">share</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-primary uppercase text-xs tracking-widest mb-2">Explore</h4>
+<a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="{{DATA:SCREEN:SCREEN_6}}">Journal</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="{{DATA:SCREEN:SCREEN_7}}">Collections</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Wholesale</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-primary uppercase text-xs tracking-widest mb-2">Legal</h4>
+<a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="{{DATA:SCREEN:SCREEN_6}}">Privacy</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="{{DATA:SCREEN:SCREEN_7}}">Terms</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-primary uppercase text-xs tracking-widest mb-2">Location</h4>
+<p class="font-body-md text-on-surface-variant">
+                    123 Creative Lane, Silom Area,<br>
+                    Bangkok, Thailand 10500
+                </p>
+<div class="mt-2 h-32 rounded-lg overflow-hidden border border-outline-variant/30">
+<img class="w-full h-full object-cover grayscale contrast-125 opacity-70" data-location="Bangkok" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXzXob0JZ-_cx_tIvYSarj-mqdy0LS3VRjCKjvZzpBiUmCSg1XxoDEEBI-VEtleXqQThNL9XaRmCVH3SrQ9dmICn2fiWly67XIfppkcXisqlzk9kwY9hprulZBl5muCIoz7IpwKxSnaKrNItvVdKUmmCUTcn4L9c-IavZuKrhlbdCNzCBgGRSikXUIWov_PjDMUb8i62EZWS4v64GbSGDN5Lt-6taq8mmmXeUxXWJtdE68mFU9lYnrC-dQ7rMK5Euj11PkY8FmEos">
+</div>
+</div>
+</div>
+</footer>
+<!-- Interactive script for some hover effects and scroll reveal -->
+<script>
+        // Button click effect (preserve existing)
+        document.querySelectorAll('.lift-effect').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'translateY(1px) scale(0.98)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = 'translateY(-4px) scale(1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Intersection Observer for Scroll Reveal
+        const revealOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Once visible, we can stop observing it
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+    </script>
+</body></html>

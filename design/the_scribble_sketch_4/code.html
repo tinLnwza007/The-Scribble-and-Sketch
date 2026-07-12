@@ -1,0 +1,380 @@
+<!DOCTYPE html><html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Profile - The Scribble &amp; Sketch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#98a4c9",
+                    "surface-bright": "#fbf9f5",
+                    "tertiary": "#0a2c14",
+                    "surface-variant": "#e4e2de",
+                    "outline-variant": "#c6c6ce",
+                    "on-tertiary-container": "#8aae8c",
+                    "surface-container": "#efeeea",
+                    "secondary-fixed-dim": "#ffb4a3",
+                    "tertiary-container": "#224228",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#abd0ac",
+                    "surface-tint": "#525e7f",
+                    "secondary": "#a73920",
+                    "on-primary-fixed": "#0d1a38",
+                    "secondary-fixed": "#ffdad2",
+                    "on-secondary-fixed-variant": "#86220a",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f2f0ed",
+                    "tertiary-fixed": "#c6ecc7",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#dbdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#2e3a59",
+                    "background": "#fbf9f5",
+                    "primary": "#182442",
+                    "surface": "#fbf9f5",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f5f3ef",
+                    "surface-container-highest": "#e4e2de",
+                    "on-secondary-container": "#6f1300",
+                    "on-primary-fixed-variant": "#3a4666",
+                    "outline": "#75777e",
+                    "inverse-surface": "#30312e",
+                    "on-background": "#1b1c1a",
+                    "primary-fixed": "#dae2ff",
+                    "on-secondary-fixed": "#3d0600",
+                    "primary-fixed-dim": "#bac6ec",
+                    "inverse-primary": "#bac6ec",
+                    "on-surface-variant": "#45464e",
+                    "on-surface": "#1b1c1a",
+                    "surface-container-high": "#eae8e4",
+                    "on-tertiary-fixed-variant": "#2d4e33",
+                    "secondary-container": "#fe795a",
+                    "on-tertiary-fixed": "#01210a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "caption": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "label-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f5;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            background-attachment: fixed;
+        }
+        .paper-card {
+            border: 1px solid rgba(117, 119, 126, 0.1);
+            transition: all 0.3s ease;
+        }
+        .paper-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -8px rgba(167, 57, 32, 0.1);
+        }
+        .washi-accent {
+            width: 40px;
+            height: 12px;
+            position: absolute;
+            top: -6px;
+            right: 20px;
+            opacity: 0.8;
+            transform: rotate(2deg);
+        }
+        .hand-drawn-border {
+            border-bottom: 2px solid #182442;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+        .scribble-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #a73920;
+            border-radius: 45% 55% 70% 30% / 30% 60% 40% 70%;
+        }
+
+        /* Scroll Reveal and Fade In animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-load {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-on-surface selection:bg-secondary-fixed">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full bg-surface/80 backdrop-blur-md z-50 border-b border-outline-variant/30">
+<nav class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity">menu</span>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">The Scribble &amp; Sketch</h1>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary transition-colors cursor-pointer">shopping_bag</span>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-[10px] font-bold text-on-primary">EV</div>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Hero Profile Section -->
+<section class="flex flex-col md:flex-row gap-12 items-center md:items-start mb-16 fade-in-load">
+<div class="relative group">
+<div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-surface-container-highest shadow-xl">
+<img class="w-full h-full object-cover" data-alt="A professional and warm studio portrait of Eleanor Vance, a woman in her 30s with a creative and thoughtful expression. She is in a bright, sunlit NYC architect studio filled with stationery, drafting tools, and paper samples. The lighting is soft and natural, emphasizing a high-end boutique aesthetic with warm paper tones and charcoal ink accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp3eikMWBxpxH-yCcdMBY98vkl8OIHm8Kme3TTGw6F4-RtWhgAH5nYq7UDVURO3xyCHRXZHpvX4gKh2gpFiUgfjbLB_XCTytDG7nDkOeoQqxq5JuyhQW4a45Src1zqsW1xpW9aRmXt6Q-_cr_egYZJimk794QBJmU4k46Cu0vmB9WNmab1yUAi1Hb21_NMVyNCPr_IRDf9onrmEHgun9DCYtpqAzs4nA60E6B2puDN49E74Avuj6AHfenGhIVnRxMQ5DHhn0sgTDM">
+</div>
+<div class="absolute -bottom-2 right-4 bg-secondary text-on-secondary px-4 py-1 rounded-full text-caption font-label-md shadow-lg transform rotate-2">
+                    Member Since '22
+                </div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-2">Eleanor Vance</h2>
+<div class="flex flex-wrap justify-center md:justify-start gap-3 mb-6">
+<span class="flex items-center gap-1 text-on-surface-variant bg-surface-container px-3 py-1 rounded-full text-label-md">
+<span class="material-symbols-outlined text-[18px]">location_on</span> NYC
+                    </span>
+<span class="flex items-center gap-1 text-on-surface-variant bg-surface-container px-3 py-1 rounded-full text-label-md">
+<span class="material-symbols-outlined text-[18px]">architecture</span> Architect
+                    </span>
+</div>
+<div class="max-w-xl">
+<h3 class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-2">Creative Bio</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Stationery enthusiast, journaler, and architect based in NYC. I find my best ideas at the intersection of a sharp 2B pencil and 120gsm cream paper. Always searching for the perfect ink flow.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<div class="reveal paper-card bg-surface-container-low p-8 rounded-xl relative overflow-hidden">
+<div class="washi-accent bg-secondary-container"></div>
+<span class="material-symbols-outlined text-secondary mb-4" style="font-variation-settings: 'FILL' 1;">book_2</span>
+<div class="font-headline-xl text-headline-xl text-primary leading-none mb-1">14</div>
+<div class="font-label-md text-label-md text-on-surface-variant uppercase">Journals Filled</div>
+</div>
+<div class="reveal paper-card bg-surface-container-low p-8 rounded-xl relative overflow-hidden" style="transition-delay: 100ms;">
+<div class="washi-accent bg-tertiary-container"></div>
+<span class="material-symbols-outlined text-tertiary-fixed-dim mb-4" style="font-variation-settings: 'FILL' 1;">edit_audio</span>
+<div class="font-headline-xl text-headline-xl text-primary leading-none mb-1">82</div>
+<div class="font-label-md text-label-md text-on-surface-variant uppercase">Tools Collected</div>
+</div>
+<div class="reveal paper-card bg-surface-container-low p-8 rounded-xl relative overflow-hidden" style="transition-delay: 200ms;">
+<div class="washi-accent bg-primary-container"></div>
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">star</span>
+<div class="font-headline-xl text-headline-xl text-primary leading-none mb-1">2.4k</div>
+<div class="font-label-md text-label-md text-on-surface-variant uppercase">Curated Clips</div>
+</div>
+</section>
+<!-- Interactive Sections -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Left Column: Archive & History -->
+<div class="space-y-12">
+<div>
+<div class="flex items-center justify-between mb-6 pb-2 border-b border-outline-variant/30">
+<h3 class="font-headline-md text-headline-md text-primary">My Archive</h3>
+<a class="text-label-md text-secondary hover:underline transition-all" href="#">View All</a>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A macro photography shot of a high-end leather-bound journal in a deep forest green color. The texture of the pebble-grain leather is visible under soft studio lighting. Minimalist workspace background with warm paper tones and a single brass pen. High-end boutique aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzQ6gOxmAtWZZQduZKZYVPEdhs5oGJanH0RTBa-GjyY8FvcaP1g187fLJX7DGHX1o0CZsYCGPomdUWKIS0VIH3lKfPbqQZw4FJa6GNRgX5gv1ZqGmwa9gDW1zEOx6gi3MZAowOfrLCQ-8crEhkNPPPDSt30A1vPVoyxKe4h-V1rsWGzsgvIShAViYC7tcsOvgWIls3UJ8dUnLKE5Ir3tLMiKmE4JueFWuQKw1x9g0jXVXL86txHQ1GtLsY3HYupFkUnk8Qabwq9m0">
+</div>
+<p class="font-label-md text-label-md text-primary truncate">Artisanal Forest Journal</p>
+<p class="font-caption text-caption text-on-surface-variant">$42.00</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up of a set of professional drafting pencils arranged neatly on a blueprint. The lighting is crisp and architectural, highlighting the metallic finish of the tools. Soft cream background texture consistent with high-end stationery branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpWKKOTo5O5Vf7qkHFlr3O9ThSBbotLbJwsd-Q5FrKI-jZdvFVZ3SuijJvPu8sn2G3RHAj4gS52kgti9zf8XXbwnQVIIj3XC6ZqcvRw_QS71XpTUh-fwpQbTx4WF3A8tB2q5AZrRFZy9U6Ydkrj0FdRzETFcHvR1ml_nw9LzxD2GZHed_qLAMa9ycHt_1I_IAucu3T5ZeBcLpOOxK6Oa2e83fiU863qvUUq3L6XJ3DtFW3c7SbzioSz_eypNX_n7OdLM51vA_T_6o">
+</div>
+<p class="font-label-md text-label-md text-primary truncate">Graphite Precision Set</p>
+<p class="font-caption text-caption text-on-surface-variant">$28.00</p>
+</div>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-6 pb-2 border-b border-outline-variant/30">
+<h3 class="font-headline-md text-headline-md text-primary">Order History</h3>
+<a class="text-label-md text-secondary hover:underline transition-all" href="#">Track Packages</a>
+</div>
+<div class="space-y-4">
+<div class="paper-card bg-surface-bright p-4 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">package_2</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Order #SK-90210</p>
+<p class="font-caption text-caption text-on-surface-variant">Delivered Oct 12, 2023</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<div class="paper-card bg-surface-bright p-4 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">local_shipping</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Order #SK-88342</p>
+<p class="font-caption text-caption text-secondary">In Transit - Arriving Tomorrow</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Address Book & Settings -->
+<div class="space-y-12">
+<div>
+<div class="flex items-center justify-between mb-6 pb-2 border-b border-outline-variant/30">
+<h3 class="font-headline-md text-headline-md text-primary">Address Book</h3>
+<button class="text-label-md text-secondary hover:underline transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add</span> Add New
+                        </button>
+</div>
+<div class="space-y-4">
+<div class="reveal paper-card bg-surface-bright p-6 rounded-lg border-l-4 border-secondary relative">
+<span class="absolute top-4 right-4 font-caption text-[10px] bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded uppercase tracking-tighter">Default</span>
+<h4 class="font-label-md text-label-md text-primary mb-2">Home Studio</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                452 Lafayette St, Apt 4B<br>
+                                New York, NY 10003<br>
+                                United States
+                            </p>
+<div class="mt-4 flex gap-4">
+<button class="text-caption text-secondary hover:opacity-80">Edit</button>
+<button class="text-caption text-on-surface-variant hover:opacity-80">Delete</button>
+</div>
+</div>
+<div class="reveal paper-card bg-surface-bright p-6 rounded-lg relative" style="transition-delay: 150ms;">
+<h4 class="font-label-md text-label-md text-primary mb-2">Vance &amp; Partners Office</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                220 11th Ave, 6th Floor<br>
+                                New York, NY 10011<br>
+                                United States
+                            </p>
+<div class="mt-4 flex gap-4">
+<button class="text-caption text-secondary hover:opacity-80">Edit</button>
+<button class="text-caption text-on-surface-variant hover:opacity-80">Delete</button>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8">
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-label-md hover:opacity-90 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">logout</span>
+                        Log Out
+                    </button>
+<p class="text-center mt-6 font-caption text-caption text-on-surface-variant">
+                        Securely logged in as eleanor.vance@studio.com
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-surface-container-low w-full py-12 mt-20 border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-gutter max-w-container-max mx-auto text-center md:text-left">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-4">The Scribble &amp; Sketch</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 The Scribble &amp; Sketch. Crafted for the curious mind.</p>
+</div>
+<div class="flex flex-col gap-2">
+<h5 class="font-label-md text-label-md text-primary mb-2">Quick Links</h5>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Journal</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Collections</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Wholesale</a>
+</div>
+<div class="flex flex-col gap-2">
+<h5 class="font-label-md text-label-md text-primary mb-2">Support</h5>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Help Center</a>
+</div>
+</div>
+</footer>
+<script>
+        // Scroll Reveal logic using Intersection Observer
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(element => {
+            revealObserver.observe(element);
+        });
+
+        // Micro-interaction for cards to add a tactile lift effect
+        document.querySelectorAll('.paper-card').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.transform = 'scale(0.98) translateY(0px)';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+        });
+    </script>
+</body></html>

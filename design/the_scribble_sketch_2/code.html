@@ -1,0 +1,461 @@
+<!DOCTYPE html><html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>The Scribble &amp; Sketch | Lamy Safari Fountain Pen</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet">
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#abd0ac",
+                        "primary": "#182442",
+                        "background": "#fbf9f5",
+                        "secondary-fixed": "#ffdad2",
+                        "outline": "#75777e",
+                        "on-tertiary-container": "#8aae8c",
+                        "primary-container": "#2e3a59",
+                        "on-secondary-container": "#6f1300",
+                        "surface-container-highest": "#e4e2de",
+                        "surface-container": "#efeeea",
+                        "tertiary": "#0a2c14",
+                        "surface-variant": "#e4e2de",
+                        "on-tertiary-fixed": "#01210a",
+                        "on-tertiary-fixed-variant": "#2d4e33",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f2f0ed",
+                        "inverse-surface": "#30312e",
+                        "on-primary-container": "#98a4c9",
+                        "surface-container-high": "#eae8e4",
+                        "primary-fixed-dim": "#bac6ec",
+                        "on-surface": "#1b1c1a",
+                        "tertiary-fixed": "#c6ecc7",
+                        "inverse-primary": "#bac6ec",
+                        "surface": "#fbf9f5",
+                        "on-background": "#1b1c1a",
+                        "surface-dim": "#dbdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#fe795a",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#dae2ff",
+                        "secondary": "#a73920",
+                        "on-secondary-fixed-variant": "#86220a",
+                        "surface-container-low": "#f5f3ef",
+                        "on-surface-variant": "#45464e",
+                        "on-primary-fixed-variant": "#3a4666",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#224228",
+                        "on-primary-fixed": "#0d1a38",
+                        "surface-bright": "#fbf9f5",
+                        "outline-variant": "#c6c6ce",
+                        "secondary-fixed-dim": "#ffb4a3",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#525e7f",
+                        "on-secondary-fixed": "#3d0600"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "caption": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .paper-texture {
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            background-repeat: repeat;
+        }
+        .hand-drawn-line {
+            height: 2px;
+            background: currentColor;
+            mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 2" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 1 Q 25 0, 50 1 T 100 1" stroke="black" fill="transparent" stroke-width="2"/></svg>');
+            mask-size: 100% 100%;
+        }
+        .torn-edge {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 95% 100%, 90% 92%, 85% 100%, 80% 92%, 75% 100%, 70% 92%, 65% 100%, 60% 92%, 55% 100%, 50% 92%, 45% 100%, 40% 92%, 35% 100%, 30% 92%, 25% 100%, 20% 92%, 15% 100%, 10% 92%, 5% 100%, 0% 92%);
+        }
+        .ink-dot::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #182442;
+            border-radius: 50%;
+            margin-right: 12px;
+            transform: scale(1.1);
+        }
+        .lift-effect {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .lift-effect:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(167, 57, 32, 0.2);
+        }
+
+        /* Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.21, 0.45, 0.32, 0.9);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.8s cubic-bezier(0.21, 0.45, 0.32, 0.9);
+        }
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden paper-texture selection:bg-secondary/20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-surface z-50 border-b border-outline-variant/30">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity active:translate-y-px duration-150">menu</button>
+<a class="hover:opacity-80 transition-opacity" href="{{DATA:SCREEN:SCREEN_7}}"><h1 class="font-headline-md text-headline-md text-primary tracking-tight">The Scribble &amp; Sketch</h1></a>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="font-label-md text-primary font-bold" href="#">Collections</a>
+<a class="font-label-md text-on-surface-variant hover:opacity-80 transition-opacity" href="#">Journal</a>
+<a class="font-label-md text-on-surface-variant hover:opacity-80 transition-opacity" href="#">About</a>
+</nav>
+<a class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity active:translate-y-px duration-150" href="{{DATA:SCREEN:SCREEN_5}}">shopping_bag</a>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-8 text-on-surface-variant/60 font-label-md reveal">
+<a class="hover:text-primary transition-colors" href="#">Catalog</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Writing Tools</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface">Fountain Pens</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Product Image Section -->
+<div class="lg:col-span-7 space-y-6 reveal-scale">
+<div class="relative group bg-surface-container-low border border-outline-variant/20 rounded-xl overflow-hidden aspect-[4/5] flex items-center justify-center p-12">
+<!-- Washi Tape Accent -->
+<div class="absolute top-6 left-6 w-16 h-6 bg-secondary/80 transform -rotate-12 flex items-center justify-center shadow-sm">
+<span class="text-[10px] text-on-secondary font-label-md tracking-widest uppercase">Classic</span>
+</div>
+<img class="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105" data-alt="A professional studio product photograph of a Lamy Safari fountain pen in matte charcoal black. The pen is lying elegantly on a high-quality cream-colored paper journal with subtle pencil grid lines. The lighting is soft and diffused, highlighting the tactile texture of the pen's sturdy ABS plastic body and its signature chrome metal clip. The overall aesthetic is minimalist, artisanal, and sophisticated, reflecting a premium stationery brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwPQZnGn9Go7f-LCY948LOsH9yiUznXfhcPhOaaEmYI49i39mg_Eri5lFig9z1niaK34Jr1Ork6Q9P9cMIDyITVcisrUQgNc16FZghhGfMF-XcJxkkbV5s_8keytVH3MTb7hX0ycXmCEL4QOs0fA91T-wV1f1QTyEYZUdQ9i7F6SWZmMi3KvoO3ADC2ixDjjGUm0MwqNTgtXF0_Ixhht9kwnw1nkdI8uB6b7cCoS_4fOSjY2KwAz3R23hQJJFAVfBg-ggt_1nqbtE">
+<button class="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-surface border border-outline-variant/30 flex items-center justify-center text-primary shadow-sm hover:bg-surface-container-high transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+</div>
+<!-- Thumbnails -->
+<div class="grid grid-cols-4 gap-4">
+<div class="aspect-square bg-surface border-2 border-primary rounded-lg p-2 cursor-pointer transition-all reveal-scale delay-100">
+<img class="w-full h-full object-contain" data-alt="Close-up detail of the Lamy Safari fountain pen nib, showcasing the polished steel point and the 'Lamy' engraved branding. The shot is captured in extreme macro, revealing the fine craftsmanship and the ink-feeding mechanism under warm, natural daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPiIYsUUh-KdpvC-tqHEwt6w2KPLJH8660Xnk2ewBKVM4dHO7fKXvz-PVSyettArm-BuR-rBOiE2ltaokkqf64a7vdL1Rg2ips7UixS5FmY2yAddKD4UrINYp4JUUcr29Xs6SVoSJhYOXzTnNBz_tRnIL0XQZvQAusoFuNS8Zy4GXABvJOAafSLkT4VuQUq4HWmDKC7T4kz6K3b1_NxWbLX3cVoDG7GPQhyT4jlCod5slSSPFothZ1kHqYaH41O-sXBYE5bRstR1c">
+</div>
+<div class="aspect-square bg-surface-container border border-outline-variant/20 rounded-lg p-2 cursor-pointer hover:border-outline transition-all opacity-60 hover:opacity-100 reveal-scale delay-200">
+<img class="w-full h-full object-contain" data-alt="A side view of the Lamy Safari pen, highlighting the iconic U-shaped wire clip and the ergonomic triangular grip section designed for comfortable writing. The background is a clean, neutral taupe that complements the charcoal black finish of the pen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALJy4wndN3Py-1NO82EUM8UfWDgKNhMkw0niQtkIzw5TMmtue_0vwJTmHvDKheUN8ZYlGVfl66j-B-dEIDah54XQRyaOMYPMKoN082Dpbudj9aK3QPpWNn-z8DW1lZBSGrOMwuxm7NpegJZpYFXiWxaO2GLruwiFcDiY4EV9cGtpuXNUE9weUNlmubsfnGbivxFRkAKfyKvnYdIyGyVQ6re6PAStUoYo36SN-d7oFyAT_gyz3nEqWtwlJOojXcllHnMQkzGqenh8s">
+</div>
+<div class="aspect-square bg-surface-container border border-outline-variant/20 rounded-lg p-2 cursor-pointer hover:border-outline transition-all opacity-60 hover:opacity-100 reveal-scale delay-300">
+<img class="w-full h-full object-contain" data-alt="The Lamy Safari fountain pen disassembled on a wooden desk, showing the barrel, the cap, and the ink converter. The composition is artistic and organized, surrounded by scattered ink splashes and hand-written calligraphy notes in navy blue ink." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOO9beVgIrrxZ4sPAkg5VuShSRbGLy_009gdsyt_50tuZObyIw30ExtKL3hxyuFo6pWbGmIICVEC4N05DE_4daEuCQNYq4yCZl2Qo0A09O_-esShLNAxnoaxkjOlsfwpvztIdIRHOx9MppdAOGdqhac3Wo7gQgZd1U74nhqBTwUrsh35cnUKiAJ8jlbKRnQP9A4cDA8Kj0HkEojXdcb1z6cgzKSL5FWJJiJrRbssKWt_t573PLCBOtMRFDsdZH3pS1XvvDjszStg8">
+</div>
+<div class="aspect-square bg-surface-container border border-outline-variant/20 rounded-lg p-2 cursor-pointer hover:border-outline transition-all opacity-60 hover:opacity-100 reveal-scale delay-400">
+<img class="w-full h-full object-contain" data-alt="A lifestyle photo of a hand holding the Lamy Safari fountain pen while writing in a leather-bound sketchbook. The setting is a cozy, sunlight-filled studio with blurred artistic supplies in the background, emphasizing the tactile experience of analog creation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl-zjzNLjJIYBz1Go9t7Xi-Ej2b7Lne5ZoRSVbYKgdHorx5j9drTT2yDGNU1ftc8q7otoNyxFyQxRcKmFQptun42xNyf6ArJyWM3lapExaZcZZa-5PXgFPr51VCRyvgwQZrapft1tZVvFfOShHl-5Wm-trh9U7At1XVbJTqKj8ZB205tq1qEJoCwcyrPmN1Hb30ExAvdGOQkCudMfc460PQ4XdnwmeF0GgSKQanBPxevdSKflEbiY75Gol2wVZy6vvEiW1p9y_B4A">
+</div>
+</div>
+</div>
+<!-- Product Details Section -->
+<div class="lg:col-span-5 lg:sticky lg:top-24 space-y-8 reveal delay-100">
+<div class="space-y-2">
+<p class="font-label-md text-secondary tracking-widest uppercase">Lamy</p>
+<h2 class="font-headline-xl text-headline-xl text-primary leading-tight">Safari Fountain Pen</h2>
+<p class="font-headline-md text-headline-md text-on-surface-variant/80">$32.00</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">star</span>
+</div>
+<span class="font-label-md text-on-surface-variant">(128 Reviews)</span>
+</div>
+<!-- Inventory Status -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-caption">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                        Only 12 left in stock — Order soon
+                    </div>
+</div>
+<!-- Lined Paper Style Description -->
+<div class="space-y-4 relative pb-8">
+<div class="hand-drawn-line text-outline-variant/50 w-full mb-4"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic leading-relaxed">
+                        "The Safari is the quintessential entry point into the world of fountain pens. Rugged, reliable, and unmistakably modern."
+                    </p>
+<div class="hand-drawn-line text-outline-variant/50 w-full mt-4"></div>
+</div>
+<div class="space-y-6">
+<!-- Nib Size Selection -->
+<div class="space-y-3">
+<label class="font-label-md text-primary">Nib Size</label>
+<div class="flex gap-3">
+<button class="w-12 h-12 rounded-lg border-2 border-primary bg-primary text-on-primary font-bold transition-all">EF</button>
+<button class="w-12 h-12 rounded-lg border border-outline-variant hover:border-primary transition-all font-bold">F</button>
+<button class="w-12 h-12 rounded-lg border border-outline-variant hover:border-primary transition-all font-bold">M</button>
+<button class="w-12 h-12 rounded-lg border border-outline-variant hover:border-primary transition-all font-bold">B</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex gap-4">
+<a class="flex-1 h-14 bg-primary text-on-primary font-label-md text-lg rounded-xl lift-effect flex items-center justify-center gap-2 border border-primary/20" href="{{DATA:SCREEN:SCREEN_5}}"><span class="material-symbols-outlined">shopping_cart</span>Add to Cart</a>
+<button class="w-14 h-14 rounded-xl border border-outline-variant/40 flex items-center justify-center text-secondary hover:bg-secondary-fixed transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6 bg-surface-container rounded-xl space-y-3">
+<div class="flex items-center gap-3 text-on-surface-variant font-label-md">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+                            Free standard shipping on orders over $50
+                        </div>
+<div class="flex items-center gap-3 text-on-surface-variant font-label-md">
+<span class="material-symbols-outlined text-[20px]">history</span>
+                            30-day "Ink &amp; Paper" return guarantee
+                        </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Description Tabs -->
+<section class="mt-24 reveal">
+<div class="flex gap-12 border-b border-outline-variant/30 mb-12 overflow-x-auto whitespace-nowrap scrollbar-hide">
+<button class="pb-4 font-headline-md text-headline-md text-primary border-b-2 border-secondary relative">The Design</button>
+<button class="pb-4 font-headline-md text-headline-md text-on-surface-variant hover:text-primary transition-colors">Technical Specs</button>
+<button class="pb-4 font-headline-md text-headline-md text-on-surface-variant hover:text-primary transition-colors">Care Instructions</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<div class="space-y-6">
+<h3 class="font-headline-lg text-headline-lg text-primary">Crafted for Creators</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Many fountain pens are treasures to be locked away, but the Lamy Safari was born to be used. Designed by Wolfgang Fabian, it broke the mold of traditional luxury by utilizing sturdy ABS plastic—the same material used for LEGO—and prioritizing ergonomics above all else.
+                    </p>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li class="ink-dot flex items-center">Ergonomic triangular grip prevents hand fatigue during long writing sessions.</li>
+<li class="ink-dot flex items-center">Visual window allows you to monitor ink levels at a glance.</li>
+<li class="ink-dot flex items-center">Iconic spring-loaded wire clip attaches securely to any pocket or journal.</li>
+<li class="ink-dot flex items-center">Interchangeable nib system allows you to swap tips easily as your style evolves.</li>
+</ul>
+</div>
+<div class="relative rounded-2xl overflow-hidden shadow-xl aspect-video reveal-scale">
+<img class="w-full h-full object-cover" data-alt="An atmospheric, high-contrast black and white photograph of ink droplets falling into a clear glass of water, creating beautiful, swirling plumes. The image captures the fluid and organic nature of ink, referencing the creative spirit of the Scribble &amp; Sketch brand. The lighting is dramatic and artistic, with deep shadows and brilliant highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCgGcQcLNzteK8Qthw1iAlzI4XJf9nQWBvPeimbNQZ_TvAZ72EU7oYm5AR9NejDz0IIBghsNvgh46xS7xlqRX1066iYZzJlRwuW1zkEvvQlMXNZvskkZnFtgqe2-btQovoWaNoBe7NkVi2qIyqUdFffwtoS6YbpWN_5jEZvIhtFdl217w1ac37M76_-De_VYKpIJ9NwcNOJx7RkCF6UpOKCOb8te5W8OW-8iR7dxJqz_YjGfAHY4bJu_qxSJP3mXsbby6uC30wO-o">
+<div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+</div>
+</div>
+</section>
+<!-- Related Products Section -->
+<section class="mt-32 reveal">
+<div class="flex justify-between items-end mb-12">
+<div class="space-y-2">
+<h3 class="font-headline-lg text-headline-lg text-primary">Pairs Well With</h3>
+<p class="font-body-md text-on-surface-variant">Complete your analog toolkit with these favorites.</p>
+</div>
+<a class="font-label-md text-secondary hover:underline transition-all flex items-center gap-1" href="#">
+                    View Catalog
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<!-- Related Item 1 -->
+<div class="group cursor-pointer reveal delay-100">
+<div class="relative aspect-[3/4] bg-surface-container-low border border-outline-variant/20 rounded-xl overflow-hidden mb-4 lift-effect">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A premium dotted-grid notebook with a dark navy linen cover, laid out on a minimalist workspace. Beside it is a bottle of deep blue ink. The style is clean, editorial, and sophisticated, emphasizing the tactile quality of the fabric cover and the heavy-weight paper pages." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9AjsADnQePgboS3JZRdcben1l-RmRrDnxEX8pzU-I_YC2SWvgkvIAMiZ8A-t2Mi_CuyiqyKlFkYcPq4X_3JNSj1FGiuh5Fi56gGOu11G-2XFnvGpuwo69A4_QYDMate9OwIMaelEqL6HcsOeDaLkRkZBCTmC5yQ3I6mKS32_FzunY9h7ObCMS8Py2MIwVEBx48vSQRkM_0uL34ZWZO7gjmIESEx9-18FpSqrgjffgqPOoL9uHMuiqxpeIrxFczx3PN5i-rV-VcRE">
+<div class="absolute top-3 right-3">
+<span class="torn-edge bg-tertiary text-on-tertiary px-3 py-1 text-caption font-label-md">Paper</span>
+</div>
+</div>
+<h4 class="font-label-md text-primary group-hover:text-secondary transition-colors">Dot Grid Journal</h4>
+<p class="font-caption text-on-surface-variant">$24.00</p>
+</div>
+<!-- Related Item 2 -->
+<div class="group cursor-pointer reveal delay-200">
+<div class="relative aspect-[3/4] bg-surface-container-low border border-outline-variant/20 rounded-xl overflow-hidden mb-4 lift-effect">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A glass bottle of artisanal 'Obsidian' fountain pen ink, featuring a beautiful vintage-style label with calligraphy. The ink is a deep, saturated black with hints of sheen. The bottle is photographed in a moody, low-light setting that highlights its elegant curves and the richness of the liquid inside." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkzX9lPwbQ46lyD4GyumW2gHZVDUYe4dSgadewpiN763NDCbTG2PD_K2kSLYp5sFfAPJd5SPgOiHbPyqedzumnZUEGu7iwxzMIclRdMOx98cD-T4rzA2PTDhYZYvI_24M0kfXZl1AatZl6pocWsMaS5Ns3mz_1Iwbn7OVfSHhOEJVaNthENIELo8yatEeFGCdNP5c6iQqd7lALNXwzgfzUi0_lww6x5k3rh2xge5xG2PhLfQxoTC5fXeN4JRYUlbYwiczFBkX1_SI">
+<div class="absolute top-3 right-3">
+<span class="torn-edge bg-secondary-container text-on-secondary-container px-3 py-1 text-caption font-label-md">Ink</span>
+</div>
+</div>
+<h4 class="font-label-md text-primary group-hover:text-secondary transition-colors">Artisanal Ink - Obsidian</h4>
+<p class="font-caption text-on-surface-variant">$18.00</p>
+</div>
+<!-- Related Item 3 -->
+<div class="group cursor-pointer reveal delay-300">
+<div class="relative aspect-[3/4] bg-surface-container-low border border-outline-variant/20 rounded-xl overflow-hidden mb-4 lift-effect">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A leather pen roll in a rich cognac brown, designed to hold three fountain pens securely. The leather is weathered and full of character, suggesting years of creative use. The roll is shown partially open, revealing the soft suede interior and the fine stitching details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhY1va_5Eb5dE2d__beqNEjislSWRRR9i54GU2kVvb5Blc92bDIsBVk3MJCKOShPgg57IaIP8MOZClJKJPauYzFgsTOXoz6yUxLy2X4QNv58SeANyfGqUK7Uln0PxKM4rCv-5xr862yCzRj_p06Jjkaz6LaalH3rRrW87eE2hkvhW1FMeibgTftUhWYBZLKG7K3sxvrAu7WYLOjOItK_vM9AddSrhiUlmO5QxpHyOEReCWshcU1G0m6bU4UAHk6YLFSNfULCj5YMA">
+<div class="absolute top-3 right-3">
+<span class="torn-edge bg-primary-container text-on-primary-container px-3 py-1 text-caption font-label-md">Leather</span>
+</div>
+</div>
+<h4 class="font-label-md text-primary group-hover:text-secondary transition-colors">Cognac Pen Roll</h4>
+<p class="font-caption text-on-surface-variant">$45.00</p>
+</div>
+<!-- Related Item 4 -->
+<div class="group cursor-pointer reveal delay-400">
+<div class="relative aspect-[3/4] bg-surface-container-low border border-outline-variant/20 rounded-xl overflow-hidden mb-4 lift-effect">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A solid brass pen rest with a minimalist, geometric design. The brass has a soft, natural patina and is shown resting on a light wood desk next to some handwritten notes. The lighting is warm and golden, emphasizing the metallic sheen and the clean lines of the object." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSl-7_PNGs1o2wwwZaa45Vd4DjZx6aiumRmEF60CAKNiAboZKW5YXf4jgUqcsF8SjFc6B6TT_1Ll38_2yz0CXkKXHZXOTsYDv2CRAg1Vebm0PtJz21gwX6qjshQfRmBlpKL3UzMSch8b85pbMe9mLjr7gMEOKctS2Lf0G1znhop4ZmAx1ZDgU0oedvsTGuN0f2l-qArU1nOCC0dvHcQQaftGYwC-hpTcdEqT23fkUWVqIbBd31FMcp_-42SBQl386nAK5RAVeYkUY">
+<div class="absolute top-3 right-3">
+<span class="torn-edge bg-tertiary-fixed-dim text-on-tertiary-fixed px-3 py-1 text-caption font-label-md">Studio</span>
+</div>
+</div>
+<h4 class="font-label-md text-primary group-hover:text-secondary transition-colors">Brushed Brass Pen Rest</h4>
+<p class="font-caption text-on-surface-variant">$38.00</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-container-low border-t border-outline-variant/10 reveal">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-gutter max-w-container-max mx-auto">
+<div class="space-y-4">
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight">The Scribble &amp; Sketch</h2>
+<p class="font-body-md text-on-surface-variant max-w-xs">
+                    Curating the world's finest stationery for the mindful creator since 2024.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h4 class="font-label-md text-primary uppercase tracking-widest">Explore</h4>
+<ul class="space-y-2">
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Journal</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Collections</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Wholesale</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-primary uppercase tracking-widest">Help</h4>
+<ul class="space-y-2">
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms</a></li>
+<li class=""><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Shipping</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-primary uppercase tracking-widest">The Newsletter</h4>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 focus:ring-0 focus:border-secondary transition-colors font-body-md" placeholder="Email address" type="email">
+<button class="absolute right-0 bottom-3 text-secondary hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<p class="text-on-surface-variant text-caption italic">
+                    © 2024 The Scribble &amp; Sketch. Crafted for the curious mind.
+                </p>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('.lift-effect').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.transform = 'scale(0.98) translateY(0px)';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+        });
+
+        // Heart favorite toggle
+        const heartBtn = document.querySelector('button .material-symbols-outlined[textContent="favorite"]')?.parentElement || 
+                        Array.from(document.querySelectorAll('button')).find(btn => btn.innerText.includes('favorite'));
+        if(heartBtn) {
+            heartBtn.addEventListener('click', function() {
+                const icon = this.querySelector('.material-symbols-outlined');
+                const isFilled = icon.style.fontVariationSettings.includes("'FILL' 1");
+                icon.style.fontVariationSettings = isFilled ? "'FILL' 0" : "'FILL' 1";
+                this.classList.toggle('bg-secondary-fixed');
+            });
+        }
+
+        // Scroll Reveal Implementation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .reveal-scale').forEach(el => observer.observe(el));
+
+        // Initial trigger for elements already in viewport
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.reveal, .reveal-scale').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body></html>
