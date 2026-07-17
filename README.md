@@ -9,24 +9,6 @@
 
 ---
 
-## สารบัญ
-
-1. [บทนำ (Introduction)](#1-บทนำ-introduction)
-2. [ข้อกำหนดการทำงาน (Functional Requirements)](#2-ข้อกำหนดการทำงาน-functional-requirements)
-3. [ข้อกำหนดที่ไม่เกี่ยวกับการทำงาน (Non-Functional Requirements)](#3-ข้อกำหนดที่ไม่เกี่ยวกับการทำงาน-non-functional-requirements)
-4. [สถาปัตยกรรมระบบและเทคโนโลยี (System Architecture)](#4-สถาปัตยกรรมระบบและเทคโนโลยี-system-architecture)
-5. [Use Case Diagram](#5-use-case-diagram)
-6. [โครงสร้างฐานข้อมูล (Entity-Relationship Diagram: ERD)](#6-โครงสร้างฐานข้อมูล-entity-relationship-diagram-erd)
-7. [แผนภาพลำดับการทำงาน (Activity Diagram)](#7-แผนภาพลำดับการทำงาน-activity-diagram)
-8. [ข้อสมมติฐานและข้อจำกัดของระบบ (Assumptions & Dependencies)](#8-ข้อสมมติฐานและข้อจำกัดของระบบ-assumptions--dependencies)
-9. [โครงสร้างและการออกแบบหน้าจอ (User Interface Structure)](#9-โครงสร้างและการออกแบบหน้าจอ-user-interface-structure)
-10. [ข้อกำหนดการเชื่อมต่อ API (API Interface Specifications)](#10-ข้อกำหนดการเชื่อมต่อ-api-api-interface-specifications)
-11. [สภาพแวดล้อมที่รองรับ (Operating Environment)](#11-สภาพแวดล้อมที่รองรับ-operating-environment)
-12. [เกณฑ์การยอมรับระบบ (Acceptance Criteria / UAT)](#12-เกณฑ์การยอมรับระบบ-acceptance-criteria--uat)
-13. [อภิธานศัพท์ (Glossary)](#13-อภิธานศัพท์-glossary)
-
----
-
 ## 1. บทนำ (Introduction)
 
 ### 1.1 จุดประสงค์ (Purpose)
@@ -174,7 +156,7 @@
 
 ### 4.1 สถาปัตยกรรมภาพรวม
 
-```mermaid
+```
 graph TB
     subgraph Client["Client-Side Browser"]
         direction TB
@@ -230,7 +212,7 @@ graph TB
 
 แผนภาพ Use Case ที่ทำการแยกขอบเขตการทำงาน (Subsystems) ของระบบออกจากกันอย่างชัดเจน
 
-```mermaid
+```
 flowchart LR
     %% Actor
     User(("👤 ผู้ใช้งาน"))
@@ -313,7 +295,7 @@ flowchart LR
 
 ### 6.1 Entity-Relationship Diagram
 
-```mermaid
+```
 erDiagram
     TODO_ITEM {
         string id PK "Unique ID - base36 timestamp plus random"
@@ -355,7 +337,7 @@ erDiagram
 
 ### 6.3 Data Migration Logic
 
-```mermaid
+```
 flowchart TD
     A["โหลดข้อมูลจาก LocalStorage"] --> B{"JSON Parse สำเร็จ?"}
     B -->|ไม่สำเร็จ| C["คืนค่า Array ว่าง"]
@@ -376,7 +358,7 @@ flowchart TD
 
 ### 7.1 Activity Diagram: เพิ่มรายการ Todo ใหม่
 
-```mermaid
+```
 flowchart TD
     Start(["เริ่มต้น"]) --> A["ผู้ใช้พิมพ์ข้อความในช่อง Input"]
     A --> B["ผู้ใช้กดปุ่ม เพิ่ม หรือ Enter"]
@@ -393,7 +375,7 @@ flowchart TD
 
 ### 7.2 Activity Diagram: เปลี่ยนสถานะผ่าน Drag and Drop (Board View)
 
-```mermaid
+```
 flowchart TD
     Start(["เริ่มต้น"]) --> A["ผู้ใช้กดค้างที่การ์ด Todo"]
     A --> B["เริ่ม Drag: บันทึก todo.id + เพิ่ม class dragging"]
@@ -413,7 +395,7 @@ flowchart TD
 
 ### 7.3 Activity Diagram: สลับ Dark/Light Mode
 
-```mermaid
+```
 flowchart TD
     Start(["เริ่มต้น"]) --> A["ผู้ใช้กดปุ่ม Theme Toggle"]
     A --> B{"ตรวจสอบ: ธีมปัจจุบันเป็น Dark?"}
@@ -429,7 +411,7 @@ flowchart TD
 
 ### 7.4 Activity Diagram: ลบรายการที่เสร็จแล้วทั้งหมด
 
-```mermaid
+```
 flowchart TD
     Start(["เริ่มต้น"]) --> A["ผู้ใช้กดปุ่ม ลบที่เสร็จแล้ว"]
     A --> B{"มีรายการสถานะ done?"}
@@ -483,7 +465,7 @@ flowchart TD
 
 ### 9.1 Site Map / โครงสร้างหน้าจอ
 
-```mermaid
+```
 flowchart TD
     subgraph SinglePage ["Single Page Application - index.html"]
         direction TB
